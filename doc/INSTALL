@@ -29,7 +29,7 @@ To function properly, Passwd **requires** the following:
                   earlier versions of Horde will **not** work.
 
    .. Important:: Be sure to have completed all of the steps in the
-                  `horde/docs/INSTALL`_ file for the Horde Framework before
+                  `horde/doc/INSTALL`_ file for the Horde Framework before
                   installing Passwd. Many of Passwd's prerequisites are also
                   Horde prerequisites. Additionally, many of Passwd's optional
                   features are configured via the Horde install.
@@ -59,7 +59,7 @@ To function properly, Passwd **requires** the following:
       SOAP support is necessary for the SOAP and ISPConfig driver.
 
 3. The following PEAR modules:
-   (See `horde/docs/INSTALL`_ for instructions on installing PEAR modules)
+   (See `horde/doc/INSTALL`_ for instructions on installing PEAR modules)
 
    .. Important:: If you are going to install Passwd the recommended way,
                   i.e. using the PEAR installer, you can skip the remainder of
@@ -100,7 +100,7 @@ latest not yet released fixes, you can install Passwd from Git.
 Installing with PEAR
 ~~~~~~~~~~~~~~~~~~~~
 
-First follow the instructions in `horde/docs/INSTALL`_ to prepare a PEAR
+First follow the instructions in `horde/doc/INSTALL`_ to prepare a PEAR
 environment for Horde and install the Horde Framework.
 
 When installing Passwd through PEAR now, the installer will automatically
@@ -153,7 +153,7 @@ Configuring Passwd
 
    Once you have configured Passwd, bring up the included test page in your
    Web browser to ensure that all necessary prerequisites have been met.  See
-   the `horde/docs/INSTALL`_ document for further details on Horde test
+   the `horde/doc/INSTALL`_ document for further details on Horde test
    scripts.  If you installed Passwd as described above, the URL to the test
    page would be::
 
@@ -322,5 +322,5 @@ The Passwd team
 
 
 .. _README: README
-.. _`horde/docs/INSTALL`: ../../horde/docs/INSTALL
-.. _`horde/docs/TRANSLATIONS`: ../../horde/docs/TRANSLATIONS
+.. _`horde/doc/INSTALL`: ../../horde/doc/INSTALL
+.. _`horde/doc/TRANSLATIONS`: ../../horde/doc/TRANSLATIONS

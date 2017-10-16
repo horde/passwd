@@ -369,6 +369,6 @@ v2.0
 [ejr] Remove check for prefs.php in notconfigured.inc.
 [ejr] Change from short-tag <?= to long format <?php echo.
 [ejr] Fix spacing and look of Submit button.
-[ejr] Update contact info in docs/INSTALL for mailing list.
+[ejr] Update contact info in doc/INSTALL for mailing list.
 [ejr] Added Norwegian (nn_NO) translation.
 [ejr] Added Swedish (sv_SE) translation.

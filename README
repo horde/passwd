@@ -33,17 +33,17 @@ The following documentation is available in the Passwd distribution:
 
 :README_:            This file
 :COPYING_:           Copyright and license information
-:`docs/CHANGES`_:    Changes by release
-:`docs/CREDITS`_:    Project developers
-:`docs/INSTALL`_:    Installation instructions and notes
-:`docs/TODO`_:       Development TODO list
+:`doc/CHANGES`_:    Changes by release
+:`doc/CREDITS`_:    Project developers
+:`doc/INSTALL`_:    Installation instructions and notes
+:`doc/TODO`_:       Development TODO list
 
 
 Installation
 ============
 
 Instructions for installing Passwd can be found in the file INSTALL_ in the
-``docs/`` directory of the Passwd distribution.
+``doc/`` directory of the Passwd distribution.
 
 
 Assistance
@@ -79,8 +79,8 @@ The Passwd team
 
 .. _README: README
 .. _COPYING: http://www.horde.org/licenses/gpl
-.. _docs/CHANGES: CHANGES
-.. _docs/CREDITS: CREDITS
+.. _doc/CHANGES: CHANGES
+.. _doc/CREDITS: CREDITS
 .. _INSTALL:
-.. _docs/INSTALL: INSTALL
-.. _docs/TODO: TODO
+.. _doc/INSTALL: INSTALL
+.. _doc/TODO: TODO

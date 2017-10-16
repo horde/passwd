@@ -10,10 +10,10 @@ Passwd provides support for changing passwords via the Horde authentication
 system or various password backends.
 
 For upgrading instructions, please see
-http://www.horde.org/apps/nag/docs/UPGRADING
+http://www.horde.org/apps/nag/doc/UPGRADING
 
 For detailed installation and configuration instructions, please see
-http://www.horde.org/apps/nag/docs/INSTALL
+http://www.horde.org/apps/nag/doc/INSTALL
 
 The major changes compared to Passwd version H5 (5.0.0) are:
     * Small bugfixes.
