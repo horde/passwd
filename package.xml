@@ -16,7 +16,7 @@
   <email>slusarz@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2017-10-13</date>
+ <date>2017-10-16</date>
  <version>
   <release>6.0.0</release>
   <api>6.0.0</api>
@@ -326,7 +326,7 @@
    </dir> <!-- /themes -->
    <file name="COPYING" role="doc" />
    <file name="index.php" role="horde" />
-   <file name="README" role="doc" />
+   <file name="README.rst" role="doc" />
   </dir> <!-- / -->
  </contents>
  <dependencies>
@@ -445,7 +445,7 @@
   <filelist>
    <install as="COPYING" name="COPYING" />
    <install as="passwd/index.php" name="index.php" />
-   <install as="README" name="README" />
+   <install as="README.rst" name="README.rst" />
    <install as="passwd/config/.htaccess" name="config/.htaccess" />
    <install as="passwd/config/backends.php" name="config/backends.php" />
    <install as="passwd/config/conf.xml" name="config/conf.xml" />
@@ -796,7 +796,7 @@
    <stability>
     <release>beta</release>
     <api>beta</api></stability>
-   <date>2017-10-13</date>
+   <date>2017-10-16</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
 * [jan] Add ISPConfig driver (Thomas Basler &lt;thomas@familie-basler.net&gt;).
