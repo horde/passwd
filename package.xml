@@ -16,7 +16,7 @@
   <email>slusarz@horde.org</email>
   <active>yes</active>
  </lead>
- <date>2017-10-17</date>
+ <date>2017-10-20</date>
  <version>
   <release>6.0.0</release>
   <api>6.0.0</api>
@@ -312,7 +312,6 @@
      <file name="AllTests.php" role="test" />
      <file name="Autoload.php" role="test" />
      <file name="bootstrap.php" role="test" />
-     <file name="phpunit.xml" role="test" />
      <file name="TestCase.php" role="test" />
     </dir> <!-- /test/Passwd -->
    </dir> <!-- /test -->
@@ -569,7 +568,6 @@
    <install as="Passwd/AllTests.php" name="test/Passwd/AllTests.php" />
    <install as="Passwd/Autoload.php" name="test/Passwd/Autoload.php" />
    <install as="Passwd/bootstrap.php" name="test/Passwd/bootstrap.php" />
-   <install as="Passwd/phpunit.xml" name="test/Passwd/phpunit.xml" />
    <install as="Passwd/TestCase.php" name="test/Passwd/TestCase.php" />
    <install as="Passwd/Unit/Driver/SqlTest.php" name="test/Passwd/Unit/Driver/SqlTest.php" />
    <install as="Passwd/Unit/Factory/DriverTest.php" name="test/Passwd/Unit/Factory/DriverTest.php" />
@@ -796,7 +794,7 @@
    <stability>
     <release>beta</release>
     <api>beta</api></stability>
-   <date>2017-10-17</date>
+   <date>2017-10-20</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
 * [jan] Add ISPConfig driver (Thomas Basler &lt;thomas@familie-basler.net&gt;).
