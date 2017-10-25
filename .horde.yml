@@ -7,3 +7,50 @@ description: >
   SQL, LDAP, Kolab, passwd files etc.
 list: sork
 type: application
+homepage: https://www.horde.org/apps/passwd
+authors:
+  -
+    name: Jan Schneider
+    user: jan
+    email: jan@horde.org
+    active: true
+    role: lead
+  -
+    name: Michael Slusarz
+    user: slusarz
+    email: slusarz@horde.org
+    active: true
+    role: lead
+version:
+  release: 6.0.0
+  api: 6.0.0
+state:
+  release: beta
+  api: beta
+license:
+  identifier: GPL-2.0
+  uri: http://www.horde.org/licenses/gpl
+dependencies:
+  required:
+    php: ^5.3 || ^7
+    pear:
+      pear.horde.org/horde: ^5
+      pear.horde.org/Horde_Auth: ^2
+      pear.horde.org/Horde_Core: ^2.30
+      pear.horde.org/Horde_Exception: ^2
+      pear.horde.org/Horde_Injector: ^2
+      pear.horde.org/Horde_Util: ^2
+      pear.horde.org/Horde_View: ^2
+    ext:
+      gettext: '*'
+  optional:
+    pear:
+      pear.horde.org/Horde_Db: ^2
+      pear.horde.org/Horde_Http: ^2
+      pear.horde.org/Horde_Ldap: ^2
+      pear.horde.org/Horde_Vfs: ^2
+      pear.php.net/Crypt_CHAP: '*'
+    ext:
+      com: '*'
+      ldap: '*'
+      soap: '*'
