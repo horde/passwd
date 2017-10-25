@@ -17,7 +17,7 @@
         }
     ],
     "version": "6.0.0",
-    "time": "2016-11-09",
+    "time": "2017-10-20",
     "repositories": [
         {
             "type": "pear",
@@ -25,10 +25,10 @@
         }
     ],
     "require": {
-        "php": "^5.3",
+        "php": "^5.3 || ^7",
         "pear-pear.horde.org/horde": "^5",
         "pear-pear.horde.org/Horde_Auth": "^2",
-        "pear-pear.horde.org/Horde_Core": "^2.11",
+        "pear-pear.horde.org/Horde_Core": "^2.30",
         "pear-pear.horde.org/Horde_Exception": "^2",
         "pear-pear.horde.org/Horde_Injector": "^2",
         "pear-pear.horde.org/Horde_Util": "^2",
@@ -44,5 +44,14 @@
         "ext-com": "*",
         "ext-ldap": "*",
         "ext-soap": "*"
+    },
+    "replace": {
+        "pear-pear.horde.org/passwd": "6.*",
+        "pear-horde/passwd": "6.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Passwd": "lib/"
+        }
     }
 }
