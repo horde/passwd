@@ -16,7 +16,7 @@
             "role": "lead"
         }
     ],
-    "version": "5.0.7",
+    "version": "5.0.8",
     "time": "2017-09-21",
     "repositories": [
         {
@@ -26,20 +26,20 @@
     ],
     "require": {
         "php": "^5.3 || ^7",
-        "pear-pear.horde.org/horde": "^5@stable",
-        "pear-pear.horde.org/Horde_Auth": "^2@stable",
-        "pear-pear.horde.org/Horde_Core": "^2.3@stable",
-        "pear-pear.horde.org/Horde_Exception": "^2@stable",
-        "pear-pear.horde.org/Horde_Injector": "^2@stable",
-        "pear-pear.horde.org/Horde_Util": "^2@stable",
-        "pear-pear.horde.org/Horde_View": "^2@stable",
+        "pear-pear.horde.org/horde": "^5",
+        "pear-pear.horde.org/Horde_Auth": "^2",
+        "pear-pear.horde.org/Horde_Core": "^2.30",
+        "pear-pear.horde.org/Horde_Exception": "^2",
+        "pear-pear.horde.org/Horde_Injector": "^2",
+        "pear-pear.horde.org/Horde_Util": "^2",
+        "pear-pear.horde.org/Horde_View": "^2",
         "ext-gettext": "*"
     },
     "suggest": {
-        "pear-pear.horde.org/Horde_Db": "^2@stable",
-        "pear-pear.horde.org/Horde_Http": "^2@stable",
-        "pear-pear.horde.org/Horde_Ldap": "^2@stable",
-        "pear-pear.horde.org/Horde_Vfs": "^2@stable",
+        "pear-pear.horde.org/Horde_Db": "^2",
+        "pear-pear.horde.org/Horde_Http": "^2",
+        "pear-pear.horde.org/Horde_Ldap": "^2",
+        "pear-pear.horde.org/Horde_Vfs": "^2",
         "pear-pear.php.net/Crypt_CHAP": "*",
         "ext-com": "*",
         "ext-ldap": "*",
