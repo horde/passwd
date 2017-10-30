@@ -10,12 +10,22 @@
     uri: http://www.horde.org/licenses/gpl
   notes: |
     [jan] Add ISPConfig driver (Thomas Basler <thomas@familie-basler.net>).
+5.0.8:
+  api: 5.0.0
+  state:
+    release: stable
+    api: stable
+  date: 2017-09-21
+  license:
+    identifier: GPL-2.0
+    uri: http://www.horde.org/licenses/gpl
+  notes:
 5.0.7:
   api: 5.0.0
   state:
     release: stable
     api: stable
-  date: 2016-12-16
+  date: 2017-09-21
   license:
     identifier: GPL-2.0
     uri: http://www.horde.org/licenses/gpl
