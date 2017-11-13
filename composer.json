@@ -1,8 +1,8 @@
 {
     "name": "horde/passwd",
-    "description": "Horde password changing application",
-    "type": "library",
-    "homepage": "https://pear.horde.org",
+    "description": "Password changing application",
+    "type": "project",
+    "homepage": "https://www.horde.org/apps/passwd",
     "license": "GPL-2.0",
     "authors": [
         {
@@ -17,7 +17,7 @@
         }
     ],
     "version": "6.0.0",
-    "time": "2017-10-20",
+    "time": "2017-11-11",
     "repositories": [
         {
             "type": "pear",
