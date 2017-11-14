@@ -2,7 +2,7 @@
 <package packagerversion="1.9.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
  <name>passwd</name>
  <channel>pear.horde.org</channel>
- <summary>Horde password changing application</summary>
+ <summary>Password changing application</summary>
  <description>An application to change any user passwords stored in various backends like SQL, LDAP, Kolab, passwd files etc.</description>
  <lead>
   <name>Jan Schneider</name>
@@ -14,9 +14,9 @@
   <name>Michael Slusarz</name>
   <user>slusarz</user>
   <email>slusarz@horde.org</email>
-  <active>yes</active>
+  <active>no</active>
  </lead>
- <date>2017-09-21</date>
+ <date>2017-11-14</date>
  <version>
   <release>5.0.8</release>
   <api>5.0.0</api>
@@ -794,7 +794,7 @@
    <stability>
     <release>stable</release>
     <api>stable</api></stability>
-   <date>2017-09-21</date>
+   <date>2017-11-14</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
 * 
