@@ -22,11 +22,11 @@ authors:
     active: false
     role: lead
 version:
-  release: 6.0.0
-  api: 6.0.0
+  release: 6.0.0alpha1
+  api: 6.0.0alpha1
 state:
-  release: beta
-  api: beta
+  release: alpha
+  api: alpha
 license:
   identifier: GPL-2.0
   uri: http://www.horde.org/licenses/gpl
