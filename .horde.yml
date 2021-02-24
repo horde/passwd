@@ -32,23 +32,24 @@ license:
   uri: http://www.horde.org/licenses/gpl
 dependencies:
   required:
-    php: ^5.3 || ^7
-    pear:
-      pear.horde.org/horde: ^5
-      pear.horde.org/Horde_Auth: ^2
-      pear.horde.org/Horde_Core: ^2.30
-      pear.horde.org/Horde_Exception: ^2
-      pear.horde.org/Horde_Injector: ^2
-      pear.horde.org/Horde_Util: ^2
-      pear.horde.org/Horde_View: ^2
+    php: ^7
+    composer:
+      horde/horde: ^6
+      horde/auth: ^3
+      horde/core: ^3
+      horde/exception: ^3
+      horde/injector: ^3
+      horde/util: ^3
+      horde/view: ^3
     ext:
       gettext: '*'
   optional:
+    composer:
+      horde/db: ^3
+      horde/http: ^3
+      horde/ldap: ^3
+      horde/vfs: ^3
     pear:
-      pear.horde.org/Horde_Db: ^2
-      pear.horde.org/Horde_Http: ^2
-      pear.horde.org/Horde_Ldap: ^2
-      pear.horde.org/Horde_Vfs: ^2
       pear.php.net/Crypt_CHAP: '*'
     ext:
       com: '*'

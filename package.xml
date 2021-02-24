@@ -331,95 +331,18 @@
  <dependencies>
   <required>
    <php>
-    <min>5.3.0</min>
+    <min>7.0.0</min>
     <max>8.0.0alpha1</max>
     <exclude>8.0.0alpha1</exclude>
    </php>
    <pearinstaller>
     <min>1.7.0</min>
    </pearinstaller>
-   <package>
-    <name>horde</name>
-    <channel>pear.horde.org</channel>
-    <min>5.0.0</min>
-    <max>6.0.0alpha1</max>
-    <exclude>6.0.0alpha1</exclude>
-   </package>
-   <package>
-    <name>Horde_Auth</name>
-    <channel>pear.horde.org</channel>
-    <min>2.0.0</min>
-    <max>3.0.0alpha1</max>
-    <exclude>3.0.0alpha1</exclude>
-   </package>
-   <package>
-    <name>Horde_Core</name>
-    <channel>pear.horde.org</channel>
-    <min>2.30.0</min>
-    <max>3.0.0alpha1</max>
-    <exclude>3.0.0alpha1</exclude>
-   </package>
-   <package>
-    <name>Horde_Exception</name>
-    <channel>pear.horde.org</channel>
-    <min>2.0.0</min>
-    <max>3.0.0alpha1</max>
-    <exclude>3.0.0alpha1</exclude>
-   </package>
-   <package>
-    <name>Horde_Injector</name>
-    <channel>pear.horde.org</channel>
-    <min>2.0.0</min>
-    <max>3.0.0alpha1</max>
-    <exclude>3.0.0alpha1</exclude>
-   </package>
-   <package>
-    <name>Horde_Util</name>
-    <channel>pear.horde.org</channel>
-    <min>2.0.0</min>
-    <max>3.0.0alpha1</max>
-    <exclude>3.0.0alpha1</exclude>
-   </package>
-   <package>
-    <name>Horde_View</name>
-    <channel>pear.horde.org</channel>
-    <min>2.0.0</min>
-    <max>3.0.0alpha1</max>
-    <exclude>3.0.0alpha1</exclude>
-   </package>
    <extension>
     <name>gettext</name>
    </extension>
   </required>
   <optional>
-   <package>
-    <name>Horde_Db</name>
-    <channel>pear.horde.org</channel>
-    <min>2.0.0</min>
-    <max>3.0.0alpha1</max>
-    <exclude>3.0.0alpha1</exclude>
-   </package>
-   <package>
-    <name>Horde_Http</name>
-    <channel>pear.horde.org</channel>
-    <min>2.0.0</min>
-    <max>3.0.0alpha1</max>
-    <exclude>3.0.0alpha1</exclude>
-   </package>
-   <package>
-    <name>Horde_Ldap</name>
-    <channel>pear.horde.org</channel>
-    <min>2.0.0</min>
-    <max>3.0.0alpha1</max>
-    <exclude>3.0.0alpha1</exclude>
-   </package>
-   <package>
-    <name>Horde_Vfs</name>
-    <channel>pear.horde.org</channel>
-    <min>2.0.0</min>
-    <max>3.0.0alpha1</max>
-    <exclude>3.0.0alpha1</exclude>
-   </package>
    <package>
     <name>Crypt_CHAP</name>
     <channel>pear.php.net</channel>
@@ -578,6 +501,373 @@
  <changelog>
   <release>
    <version>
+    <release>2.0.0</release>
+    <api/>
+   </version>
+   <stability>
+    <release/>
+    <api/>
+   </stability>
+   <date/>
+   <license uri=""></license>
+   <notes>
+* [ejr] Added optional checks for password lengths and strength testing.
+* [ejr] Remove check for prefs.php in notconfigured.inc.
+* [ejr] Change from short-tag &lt;?= to long format &lt;?php echo.
+* [ejr] Fix spacing and look of Submit button.
+* [ejr] Update contact info in doc/INSTALL for mailing list.
+* [ejr] Added Norwegian (nn_NO) translation.
+* [ejr] Added Swedish (sv_SE) translation.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.1.0</release>
+    <api/>
+   </version>
+   <stability>
+    <release/>
+    <api/>
+   </stability>
+   <date/>
+   <license uri=""></license>
+   <notes>
+* [ejr] Add servuftp interface.
+* [ejr] Add exim sql backend.
+* [ejr] Add smbpasswd support.
+* [ejr] Move to driver driven system.
+* [mc]  Add javascript checks for form input.
+* [jan] Add Bulgarian translation (Miroslav Pendev &lt;pendev@hotmail.com&gt;).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.2.0RC1</release>
+    <api/>
+   </version>
+   <stability>
+    <release/>
+    <api/>
+   </stability>
+   <date/>
+   <license uri=""></license>
+   <notes>
+* [ejr] Add vpopmail driver (Anton Nekhoroshikh &lt;anton@valuehost.ru&gt;).
+* [mac] Add vmailmgr driver (Marco Kaiser &lt;bate@php.net&gt;).
+* [ejr] Add expect script (Gaudenz Steinlin).
+* [ejr] Change ldap code to do self-password changes, add phpdoc.
+* [ejr] Update ldap driver (Tjeerd van der Zee).
+* [ejr] Reset Horde/IMP cached credentials when changing password.
+* [ejr] Add username hooks (mac).
+* [ejr] Rewrite driver system, add backends.conf system (mc).
+* [jan] Add Italian translation (Fichera Gianrico &lt;gianrico.fichera@itesys.it&gt;).
+* [cjh] Close several small XSS vulnerabilities (Mitja Kolsek &lt;mitja.kolsek@acros.si&gt;).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.2.0RC2</release>
+    <api/>
+   </version>
+   <stability>
+    <release/>
+    <api/>
+   </stability>
+   <date/>
+   <license uri=""></license>
+   <notes>
+* [ejr] Fix missing path for expect binary.
+* [ejr] Add missing scripts/ directory and missing expect script.
+* [ejr] Fix error reporting in expect driver (j.huinink@wanadoo.nl).
+* [ejr] Remove old realm code that was previously missed.
+* [ejr] Port servuftp driver to new backends.conf format.
+* [ejr] Return actual error message text in poppassd driver (submitted by Leena Heino &lt;Leena.Heino@uta.fi&gt;).
+* [ejr] Change is_a(*, &apos;PEAR_Error&apos;) calls to PEAR::isError() calls for php bc.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.2.0</release>
+    <api/>
+   </version>
+   <stability>
+    <release/>
+    <api/>
+   </stability>
+   <date/>
+   <license uri=""></license>
+   <notes>
+* [ejr] Allow bc for php versions that don&apos;t have the ctype extension.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.2.1RC1</release>
+    <api/>
+   </version>
+   <stability>
+    <release/>
+    <api/>
+   </stability>
+   <date/>
+   <license uri=""></license>
+   <notes>
+* [jan] Add Indonesian language (Slamin &lt;slamin@unej.ac.id&gt;).
+* [jan] Add Galician translation (Rafael Varela Pet &lt;srrafa@usc.es&gt;, Guillermo Mendez &lt;guille@usc.es&gt;).
+* [jan] Add Danish translation (Anders Bruun Olsen &lt;anders@bruun-olsen.net&gt;).
+* [jan] Add Arabic (Syria) translation (Platinum Development Team &lt;devteam@platinum-sy.net&gt;).
+* [jan] Add Hungarian translation (Szabo Gyula &lt;gyufi@sztaki.hu&gt;).
+* [jan] Add Romanian translation (Eugen Hoanca &lt;eugenh@urban-grafx.ro&gt;, Marius Dragulescu &lt;mariusd@urban-grafx.ro&gt;).
+* [jan] Add Lithuanian translation (Vilius Sumskas &lt;vilius@lnk.lt&gt;).
+* [ejr] Fix BC breaks in vpopmail and sql drivers.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.2.1</release>
+    <api/>
+   </version>
+   <stability>
+    <release/>
+    <api/>
+   </stability>
+   <date/>
+   <license uri=""></license>
+   <notes>
+* [jan] Bug #40: Fix smbpasswd driver with non-bash shells (Christopher Huyler &lt;chris@huyler.net&gt;).
+* [jan] Add Simplified Chinese translation (Zhang Bo &lt;boozhang@sdb.ac.cn&gt;).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>2.2.2</release>
+    <api/>
+   </version>
+   <stability>
+    <release/>
+    <api/>
+   </stability>
+   <date/>
+   <license uri=""></license>
+   <notes>
+* [jan] Close XSS when setting the parent frame&apos;s page title by javascript (cjh).
+* [ejr] Configuration item for showing/changing username in the form.
+* [jan] Allow to set the protocol version in the LDAP driver (ben@alkaloid.net).
+* [cjh] Add crypt-blowfish and crypt-md5 encryption types. Also add crypt-des for completion which is just an alias for crypt (max).
+* [jan] Add Estonian translation (Toomas Aas &lt;toomas.aas@raad.tartu.ee&gt;).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.0.01</release>
+    <api/>
+   </version>
+   <stability>
+    <release/>
+    <api/>
+   </stability>
+   <date/>
+   <license uri=""></license>
+   <notes>
+* [cjh] Use Crypt_CHAP to generate smbldap passwords (Bug #1223).
+* [stb] Add Kolab driver.
+* [cjh] Allow using admin credentials in the LDAP driver (Bug #1409).
+* [cjh] Use bind variables in SQL drivers (selsky@columbia.edu, Bug #1718).
+* [cjh] Allow the list of refused usernames to be empty (Bug #1544).
+* [cjh] If $conf[&apos;user&apos;][&apos;change&apos;] is false, don&apos;t trust form input for the userid.
+* [jan] Add Catalan translation (Joan Jorba Calsina &lt;joan.jorba@rusc.net&gt;).
+* [cjh] Add ADSI and PSPASSWD windows password drivers (LRM &lt;lrm@ionline.com.br&gt;).
+* [jan] Add Persian (Western) translation (Vahid Ghafarpour &lt;vahid@ghafarpour.com&gt;).
+* [jan] Add shadowLastChange and shadowMin configuration items to LDAP driver (Roel Gloudemans &lt;roel@gloudemans.info&gt;).
+* [cjh] Add proc_open() driver (Samuel Nicolary &lt;sam@nicolary.org&gt;).
+* [cjh] Add an SMB LDAP driver (Shane Boulter &lt;sboulter@ariasolutions.com&gt;).
+* [cjh] Add SSL support to the LDAP driver (LRM &lt;lrm@ionline.com.br&gt;).
+* [max] Add minSymbols and minClasses password policies.  See comments in config/backends.php.dist for more information.
+* [max] Add optional &apos;required&apos; parameters to composite driver&apos;s subdriver configurations.
+* [max] Add optional parameter &apos;no_reset&apos; to the backend configs which prevents reseting the authenticated user&apos;s credentials on password changes.
+* [max] Properly reset authenticated user&apos;s credentials.
+* [cjh] Use password encryption that&apos;s now implemented in the Auth:: package.
+* [max] Add pine driver which changes a pine-encoded file using FTP.
+* [max] Fix password checking when encryption requires a random salt.
+* [max] Add composite driver which will replace all the groups stuff.
+* [max] Add support for backend groups to allow syncing of multiple backends.
+* [max] Add query_lookup and query_modify parameters to the sql driver.
+* [ejr] Add tls support for ldap driver.
+* [ejr] Fix error reporting in poppassd driver.
+* [ejr] Add binddn hook submitted by Amith Varghese &lt;amith@xalan.com&gt;.
+* [ejr] make sure oldpassword == horde_login_password before changing horde cached password.
+* [ejr] Fix md5 (md5-hex and md5-base64) encryption for ldap/sql (Amith Varghese &lt;amith@xalan.com&gt;).
+* [mc]  Move templates to horde style directory layout, getName() -&gt; getParam().
+* [ejr] Implemented new CVS HEAD themes.
+* [ejr] Updated to new CVS HEAD notification system.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.0.0RC1</release>
+    <api/>
+   </version>
+   <stability>
+    <release/>
+    <api/>
+   </stability>
+   <date/>
+   <license uri=""></license>
+   <notes>
+* [jan] Extend the expect script to allow setups with passwd as the login shell (Request #2550, Lionel Elie Mamane &lt;lmamane@debian.org&gt;).
+* [jan] Don&apos;t bind to LDAP anonymously if binding with userdn fails (Bug #2502).
+* [cjh] Fix updating shadowlastchange attribute in ldap driver (Roel Gloudemans &lt;roel@gloudemans.info&gt;).
+* [jan] Extend the smbldap driver from the ldap driver to support all parameters of the ldap driver (Request #2499).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.0.0</release>
+    <api/>
+   </version>
+   <stability>
+    <release/>
+    <api/>
+   </stability>
+   <date/>
+   <license uri=""></license>
+   <notes>
+* [jan] Add configuration option to switch between using user names with and without realms.
+* [jan] Add Slovak translation (Ivan Noris &lt;vix@vazka.sk&gt;).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.0.1</release>
+    <api/>
+   </version>
+   <stability>
+    <release/>
+    <api/>
+   </stability>
+   <date/>
+   <license uri=""></license>
+   <notes>
+* [jan] Add placeholders for domain and username parts to SQL driver queries (Vilius Sumskas &lt;vilius@lnk.lt&gt;, Request #4985).
+* [jan] Improve error checking in poppassd driver (Bug #4505, horde@koornneef.net).
+* [jan] Add Slovenian translation (Duck &lt;duck@obala.net&gt;).
+* [jan] Compare hashing algorithms in passwords case insensitively (andreas@altroot.de, Bug #2708).
+* [jan] Allow password changing for special Kolab users (mzizka@hotmail.com, Request #4128).
+* [jan] Add Japanese translation (Hiromi Kimura &lt;hiromi@tac.tsukuba.ac.jp&gt;).
+* [ben] Better support for MS-SQL
+* [cjh] Add support in the expect driver for rssh, scponly, and other programs that can execute certain commands over ssh without providing a prompt (Request #2887).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.1.0RC1</release>
+    <api/>
+   </version>
+   <stability>
+    <release/>
+    <api/>
+   </stability>
+   <date/>
+   <license uri=""></license>
+   <notes>
+* [cjh] Add missing enforcement of minSymbol password policy (yann@pleiades.fr.eu.org, Bug #7260).
+* [cjh] Only update smbldap attributes for Samba users, and update all attributes at once instead of one at a time (marco@csita.unige.it, Request #5977).
+* [cjh] Don&apos;t set smbldap attributes that are commented out in the config (fabio.pedretti@ing.unibs.it, Request #5937).
+* [jan] Move all Passwd-specific hook examples from Horde&apos;s config/ directory.
+* [cjh] Add support for switching between encryption schemes (ulrich-horde@topfen.net, Request #2865).
+* [jan] Add support for sudo to the example expect script (Dennis Voetelink &lt;voetelink@ecn.nl&gt;, Request #5300).
+* [mas] Conform to WCAG 1.0 Priority 2/Section 508 accessibility guidelines. (Request #4080)
+* [jan] Add new expect driver that uses the expect PECL PHP extension (Duck &lt;duck@obala.net&gt;).
+* [mjr] Add new http driver for changing passwords via an existing web form.
+* [mjr] Pass reference to driver to the _passwd_hook_username call.
+* [jan] Add Turkish translation (METU &lt;horde-tr@metu.edu.tr&gt;).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.1.0RC2</release>
+    <api/>
+   </version>
+   <stability>
+    <release/>
+    <api/>
+   </stability>
+   <date/>
+   <license uri=""></license>
+   <notes>
+* [cjh] Don&apos;t include the old password in LDAP driver error messages (Joffrey van Wageningen &lt;joffrey-horde@coolhaven.info&gt;).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.1.0</release>
+    <api/>
+   </version>
+   <stability>
+    <release/>
+    <api/>
+   </stability>
+   <date/>
+   <license uri=""></license>
+   <notes>
+* [cjh] Fix bad mode for STDERR in the procopen driver (info@opensolutions.net, Bug #8022).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.1.1</release>
+    <api/>
+   </version>
+   <stability>
+    <release/>
+    <api/>
+   </stability>
+   <date/>
+   <license uri=""></license>
+   <notes>
+* [cjh] SECURITY: Fix XSS when specifying an invalid backend key (security@davidwharton.us, #8398).
+* [jan] Add hook that&apos;s called after successfully changing the password.
+* [jan] Add SOAP driver.
+* [jan] Add example configuration for Postfix Admin (Michael Brennen &lt;michael@fishnet.us&gt;).
+* [jan] Fix binding to LDAP server if using the userdn hook.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.1.2</release>
+    <api/>
+   </version>
+   <stability>
+    <release/>
+    <api/>
+   </stability>
+   <date/>
+   <license uri=""></license>
+   <notes>
+* [jan] Enable output compression (horde@albasoft.com, Bug #8649).
+* [jan] Add Croatian translation (Valentin Vidic &lt;valentin.vidic@carnet.hr&gt;).
+* [jan] Add option to configure referrals for LDAP driver (manilal@ejyothi.com, Request #8582).
+* [jan] Simplify and fix smbldap driver (Bug #8192).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>3.1.3</release>
+    <api/>
+   </version>
+   <stability>
+    <release/>
+    <api/>
+   </stability>
+   <date/>
+   <license uri=""></license>
+   <notes>
+* [jan] Fix examples using &apos;minSymbols&apos; instead of &apos;minSymbol&apos; (Bug #8854).
+* [jan] Fix PHP error when changing passwords with LDAP driver (Bug #8686).
+   </notes>
+  </release>
+  <release>
+   <version>
     <release>4.0.0alpha1</release>
     <api>4.0.0alpha1</api>
    </version>
@@ -598,10 +888,12 @@
   <release>
    <version>
     <release>4.0.0RC1</release>
-    <api>4.0.0RC1</api></version>
+    <api>4.0.0RC1</api>
+   </version>
    <stability>
     <release>beta</release>
-    <api>beta</api></stability>
+    <api>beta</api>
+   </stability>
    <date>2011-10-28</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
@@ -611,10 +903,12 @@
   <release>
    <version>
     <release>4.0.0</release>
-    <api>4.0.0</api></version>
+    <api>4.0.0</api>
+   </version>
    <stability>
     <release>stable</release>
-    <api>stable</api></stability>
+    <api>stable</api>
+   </stability>
    <date>2011-11-02</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
@@ -624,10 +918,12 @@
   <release>
    <version>
     <release>4.0.1</release>
-    <api>4.0.0</api></version>
+    <api>4.0.0</api>
+   </version>
    <stability>
     <release>stable</release>
-    <api>stable</api></stability>
+    <api>stable</api>
+   </stability>
    <date>2012-02-28</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
@@ -639,10 +935,12 @@
   <release>
    <version>
     <release>5.0.0beta1</release>
-    <api>5.0.0</api></version>
+    <api>5.0.0</api>
+   </version>
    <stability>
     <release>beta</release>
-    <api>stable</api></stability>
+    <api>stable</api>
+   </stability>
    <date>2013-05-07</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
@@ -657,10 +955,12 @@
   <release>
    <version>
     <release>5.0.0RC1</release>
-    <api>5.0.0</api></version>
+    <api>5.0.0</api>
+   </version>
    <stability>
     <release>beta</release>
-    <api>stable</api></stability>
+    <api>stable</api>
+   </stability>
    <date>2013-05-29</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
@@ -671,10 +971,12 @@
   <release>
    <version>
     <release>5.0.0</release>
-    <api>5.0.0</api></version>
+    <api>5.0.0</api>
+   </version>
    <stability>
     <release>stable</release>
-    <api>stable</api></stability>
+    <api>stable</api>
+   </stability>
    <date>2013-06-05</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
@@ -684,10 +986,12 @@
   <release>
    <version>
     <release>5.0.1</release>
-    <api>5.0.0</api></version>
+    <api>5.0.0</api>
+   </version>
    <stability>
     <release>stable</release>
-    <api>stable</api></stability>
+    <api>stable</api>
+   </stability>
    <date>2013-08-27</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
@@ -700,10 +1004,12 @@
   <release>
    <version>
     <release>5.0.2</release>
-    <api>5.0.0</api></version>
+    <api>5.0.0</api>
+   </version>
    <stability>
     <release>stable</release>
-    <api>stable</api></stability>
+    <api>stable</api>
+   </stability>
    <date>2014-09-05</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
@@ -716,10 +1022,12 @@
   <release>
    <version>
     <release>5.0.3</release>
-    <api>5.0.0</api></version>
+    <api>5.0.0</api>
+   </version>
    <stability>
     <release>stable</release>
-    <api>stable</api></stability>
+    <api>stable</api>
+   </stability>
    <date>2015-08-01</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
@@ -734,10 +1042,12 @@
   <release>
    <version>
     <release>5.0.4</release>
-    <api>5.0.0</api></version>
+    <api>5.0.0</api>
+   </version>
    <stability>
     <release>stable</release>
-    <api>stable</api></stability>
+    <api>stable</api>
+   </stability>
    <date>2015-10-21</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
@@ -747,10 +1057,12 @@
   <release>
    <version>
     <release>5.0.5</release>
-    <api>5.0.0</api></version>
+    <api>5.0.0</api>
+   </version>
    <stability>
     <release>stable</release>
-    <api>stable</api></stability>
+    <api>stable</api>
+   </stability>
    <date>2016-07-02</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
@@ -763,10 +1075,12 @@
   <release>
    <version>
     <release>5.0.6</release>
-    <api>5.0.0</api></version>
+    <api>5.0.0</api>
+   </version>
    <stability>
     <release>stable</release>
-    <api>stable</api></stability>
+    <api>stable</api>
+   </stability>
    <date>2016-12-16</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
@@ -776,11 +1090,13 @@
   <release>
    <version>
     <release>5.0.7</release>
-    <api>5.0.0</api></version>
+    <api>5.0.0</api>
+   </version>
    <stability>
     <release>stable</release>
-    <api>stable</api></stability>
-   <date>2016-12-16</date>
+    <api>stable</api>
+   </stability>
+   <date>2017-09-21</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
 * [jan] SECURITY: Fix open redirects.
@@ -789,28 +1105,32 @@
   </release>
   <release>
    <version>
-    <release>6.0.0alpha1</release>
-    <api>6.0.0alpha1</api></version>
-   <stability>
-    <release>alpha</release>
-    <api>alpha</api></stability>
-   <date>2021-02-24</date>
-   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
-   <notes>
-* [jan] Add ISPConfig driver (Thomas Basler &lt;thomas@familie-basler.net&gt;).
-   </notes>
-  </release>
-  <release>
-   <version>
     <release>5.0.8</release>
-    <api>5.0.0</api></version>
+    <api>5.0.0</api>
+   </version>
    <stability>
     <release>stable</release>
-    <api>stable</api></stability>
+    <api>stable</api>
+   </stability>
    <date>2017-09-21</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
 * 
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>6.0.0alpha1</release>
+    <api>6.0.0alpha1</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2017-10-20</date>
+   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
+   <notes>
+* [jan] Add ISPConfig driver (Thomas Basler &lt;thomas@familie-basler.net&gt;).
    </notes>
   </release>
  </changelog>
