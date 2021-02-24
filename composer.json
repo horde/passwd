@@ -1,7 +1,7 @@
 {
     "name": "horde/passwd",
     "description": "Password changing application",
-    "type": "project",
+    "type": "horde-application",
     "homepage": "https://www.horde.org/apps/passwd",
     "license": "GPL-2.0",
     "authors": [
@@ -16,42 +16,46 @@
             "role": "lead"
         }
     ],
-    "version": "6.0.0",
-    "time": "2017-11-11",
+    "version": "6.0.0alpha1",
+    "time": "2021-02-24",
     "repositories": [
         {
-            "type": "pear",
-            "url": "https://pear.horde.org"
+            "type": "composer",
+            "url": "https://horde-satis.maintaina.com/"
+        },
+        {
+            "url": "https://pear.php.net",
+            "type": "pear"
         }
     ],
     "require": {
+        "horde/horde-installer-plugin": "*",
         "php": "^5.3 || ^7",
-        "pear-pear.horde.org/horde": "^5",
-        "pear-pear.horde.org/Horde_Auth": "^2",
-        "pear-pear.horde.org/Horde_Core": "^2.30",
-        "pear-pear.horde.org/Horde_Exception": "^2",
-        "pear-pear.horde.org/Horde_Injector": "^2",
-        "pear-pear.horde.org/Horde_Util": "^2",
-        "pear-pear.horde.org/Horde_View": "^2",
+        "horde/horde": "^5",
+        "horde/auth": "^2",
+        "horde/core": "^2.30",
+        "horde/exception": "^2",
+        "horde/injector": "^2",
+        "horde/util": "^2",
+        "horde/view": "^2",
         "ext-gettext": "*"
     },
     "suggest": {
-        "pear-pear.horde.org/Horde_Db": "^2",
-        "pear-pear.horde.org/Horde_Http": "^2",
-        "pear-pear.horde.org/Horde_Ldap": "^2",
-        "pear-pear.horde.org/Horde_Vfs": "^2",
+        "horde/db": "^2",
+        "horde/http": "^2",
+        "horde/ldap": "^2",
+        "horde/vfs": "^2",
         "pear-pear.php.net/Crypt_CHAP": "*",
         "ext-com": "*",
         "ext-ldap": "*",
         "ext-soap": "*"
     },
-    "replace": {
-        "pear-pear.horde.org/passwd": "6.*",
-        "pear-horde/passwd": "6.*"
-    },
     "autoload": {
         "psr-0": {
             "Passwd": "lib/"
+        },
+        "psr-4": {
+            "Horde\\Passwd\\": "src/"
         }
     }
 }
