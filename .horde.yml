@@ -50,7 +50,7 @@ dependencies:
       horde/ldap: ^3
       horde/vfs: ^3
     pear:
-      pear.php.net/Crypt_CHAP: '*'
+      pear/crypt_chap: '^2'
     ext:
       com: '*'
       ldap: '*'
