@@ -16,15 +16,14 @@
             "role": "lead"
         }
     ],
-    "version": "6.0.0alpha2",
-    "time": "2021-02-24",
+    "time": "2021-03-15",
     "repositories": [
         {
             "type": "composer",
             "url": "https://horde-satis.maintaina.com/"
         },
         {
-            "url": "https://pear.php.net",
+            "url": "https://pear",
             "type": "pear"
         }
     ],
@@ -45,7 +44,7 @@
         "horde/http": "^3",
         "horde/ldap": "^3",
         "horde/vfs": "^3",
-        "pear-pear.php.net/Crypt_CHAP": "*",
+        "pear-pear/crypt_chap": "^2",
         "ext-com": "*",
         "ext-ldap": "*",
         "ext-soap": "*"

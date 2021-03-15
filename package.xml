@@ -16,7 +16,7 @@
   <email>slusarz@horde.org</email>
   <active>no</active>
  </lead>
- <date>2021-02-24</date>
+ <date>2021-03-15</date>
  <version>
   <release>6.0.0alpha2</release>
   <api>6.0.0alpha1</api>
@@ -344,8 +344,11 @@
   </required>
   <optional>
    <package>
-    <name>Crypt_CHAP</name>
-    <channel>pear.php.net</channel>
+    <name>crypt_chap</name>
+    <channel>pear</channel>
+    <min>2.0.0</min>
+    <max>3.0.0alpha1</max>
+    <exclude>3.0.0alpha1</exclude>
    </package>
    <extension>
     <name>com</name>
