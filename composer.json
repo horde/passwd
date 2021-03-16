@@ -45,7 +45,7 @@
         "horde/http": "^3 || dev-FRAMEWORK_6_0",
         "horde/ldap": "^3 || dev-FRAMEWORK_6_0",
         "horde/vfs": "^3 || dev-FRAMEWORK_6_0",
-        "pear-pear/crypt_chap": "^2",
+        "pear/crypt_chap": "^2",
         "ext-com": "*",
         "ext-ldap": "*",
         "ext-soap": "*"
