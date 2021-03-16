@@ -49,7 +49,6 @@ dependencies:
       horde/http: ^3
       horde/ldap: ^3
       horde/vfs: ^3
-    pear:
       pear/crypt_chap: ^2
     ext:
       com: '*'
