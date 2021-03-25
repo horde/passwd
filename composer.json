@@ -22,14 +22,10 @@
         {
             "type": "composer",
             "url": "https://horde-satis.maintaina.com/"
-        },
-        {
-            "url": "https://pear",
-            "type": "pear"
         }
     ],
     "require": {
-        "horde/horde-installer-plugin": "dev-FRAMEWORK_6_0 || '*'",
+        "horde/horde-installer-plugin": "dev-FRAMEWORK_6_0 || *",
         "php": "^7",
         "horde/horde": "^6 || dev-FRAMEWORK_6_0",
         "horde/auth": "^3 || dev-FRAMEWORK_6_0",
