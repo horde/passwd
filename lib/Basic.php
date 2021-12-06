@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2000-2017 Horde LLC (http://www.horde.org/)
  *
@@ -59,7 +60,8 @@ class Passwd_Basic
         } else {
             try {
                 $this->_userid = Horde::callHook('default_username', array(), 'passwd');
-            } catch (Horde_Exception_HookNotSet $e) {}
+            } catch (Horde_Exception_HookNotSet $e) {
+            }
         }
 
         $this->_backends = $injector->getInstance('Passwd_Factory_Driver')->backends;
@@ -88,8 +90,9 @@ class Passwd_Basic
      */
     private function _init()
     {
-        global $conf, $page_output, $session;
+        global $conf, $page_output;
         $passedToken = $this->_vars->get('token', '');
+        $sessionToken = $GLOBALS['session']->getToken();
 
         // Get the backend details.
         $backend_key = $this->_vars->backend;
@@ -233,7 +236,8 @@ class Passwd_Basic
 
         try {
             Horde::callHook('password_changed', array($this->_userid, $this->_vars->oldpassword, $this->_vars->newpassword0), 'passwd');
-        } catch (Horde_Exception_HookNotSet $e) {}
+        } catch (Horde_Exception_HookNotSet $e) {
+        }
 
         if (!empty($b_ptr['logout'])) {
             $logout_url = $registry->getLogoutUrl(array(
@@ -269,18 +273,21 @@ class Passwd_Basic
         if (!empty($backend['preferred'])) {
             if (is_array($backend['preferred'])) {
                 foreach ($backend['preferred'] as $backend) {
-                    if ($backend == $_SERVER['SERVER_NAME'] ||
-                        $backend == $_SERVER['HTTP_HOST']) {
+                    if (
+                        $backend == $_SERVER['SERVER_NAME'] ||
+                        $backend == $_SERVER['HTTP_HOST']
+                    ) {
                         return true;
                     }
                 }
-            } elseif ($backend['preferred'] == $_SERVER['SERVER_NAME'] ||
-                      $backend['preferred'] == $_SERVER['HTTP_HOST']) {
+            } elseif (
+                $backend['preferred'] == $_SERVER['SERVER_NAME'] ||
+                $backend['preferred'] == $_SERVER['HTTP_HOST']
+            ) {
                 return true;
             }
         }
 
         return false;
     }
-
 }
