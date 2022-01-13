@@ -7,6 +7,7 @@
 <input type="hidden" name="userid" value="<?php echo $this->escape($this->userid) ?>" />
 <?php endif ?>
 <input type="hidden" name="return_to" value="<?php echo $this->escape($this->url) ?>" />
+<input type="hidden" name="token" value="<?php echo $this->token ?>" />
 
 <h1 class="header"><?php echo $this->header ?></h1>
 
