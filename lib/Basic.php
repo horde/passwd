@@ -88,7 +88,8 @@ class Passwd_Basic
      */
     private function _init()
     {
-        global $conf, $page_output;
+        global $conf, $page_output, $session;
+        $passedToken = $this->_vars->get('token', '');
 
         // Get the backend details.
         $backend_key = $this->_vars->backend;
@@ -96,7 +97,7 @@ class Passwd_Basic
             $backend_key = null;
         }
 
-        if ($backend_key && $this->_vars->submit) {
+        if ($backend_key && $this->_vars->submit && $session->checkToken($passedToken)) {
             $this->_changePassword($backend_key);
         }
 
@@ -125,6 +126,7 @@ class Passwd_Basic
         $view->userChange = $conf['user']['change'];
         $view->showlist = ($conf['backend']['backend_list'] == 'shown');
         $view->backend = $backend_key;
+        $view->token = $session->getToken();
 
         // Build the <select> widget for the backends list.
         if ($view->showlist) {
