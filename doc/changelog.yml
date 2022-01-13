@@ -19,7 +19,8 @@
   license:
     identifier: GPL-2.0
     uri: http://www.horde.org/licenses/gpl
-  notes:
+  notes: |
+    [jan] Add CSRF protection  (Midah Pasche <midahannep@gmail.com>, PR #1).
 5.0.7:
   api: 5.0.0
   state:
