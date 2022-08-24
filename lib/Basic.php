@@ -90,7 +90,7 @@ class Passwd_Basic
      */
     private function _init()
     {
-        global $conf, $page_output;
+        global $conf, $page_output, $session;
         $passedToken = $this->_vars->get('token', '');
         $sessionToken = $GLOBALS['session']->getToken();
 
