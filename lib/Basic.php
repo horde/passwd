@@ -90,9 +90,8 @@ class Passwd_Basic
      */
     private function _init()
     {
-        global $conf, $page_output, $session;
+        global $conf, $page_output, $session, $notification;
         $passedToken = $this->_vars->get('token', '');
-        $sessionToken = $GLOBALS['session']->getToken();
 
         // Get the backend details.
         $backend_key = $this->_vars->backend;
@@ -100,8 +99,13 @@ class Passwd_Basic
             $backend_key = null;
         }
 
-        if ($backend_key && $this->_vars->submit && $session->checkToken($passedToken)) {
-            $this->_changePassword($backend_key);
+        if ($backend_key && $this->_vars->submit) {
+            try {
+                $session->checkToken($passedToken);
+                $this->_changePassword($backend_key);
+            } catch (Horde_Exception $e) {
+                $notification->push($e, 'horde.error');
+            }
         }
 
         // Choose the prefered backend from config/backends.php.
@@ -165,7 +169,7 @@ class Passwd_Basic
 
         // Check for users that cannot change their passwords.
         if (in_array($this->_userid, $conf['user']['refused'])) {
-            $notification->push(sprintf(_("You can't change password for user %s"), $userid), 'horde.error');
+            $notification->push(sprintf(_("You can't change password for user %s"), $this->_userid), 'horde.error');
             return;
         }
 
