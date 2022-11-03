@@ -18,7 +18,7 @@
  </lead>
  <date>2022-11-03</date>
  <version>
-  <release>6.0.0alpha3</release>
+  <release>6.0.0alpha4</release>
   <api>6.0.0alpha1</api>
  </version>
  <stability>
@@ -27,8 +27,7 @@
  </stability>
  <license uri="http://www.horde.org/licenses/gpl">GPL-2.0-only</license>
  <notes>
-* [rla] Enable PHP 8.x compat.
-* |+
+* 
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -506,6 +505,43 @@
   </filelist>
  </phprelease>
  <changelog>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
   <release>
    <version>
     <release>2.0.0</release>
@@ -1127,21 +1163,6 @@
   </release>
   <release>
    <version>
-    <release>6.0.0</release>
-    <api>6.0.0</api>
-   </version>
-   <stability>
-    <release>beta</release>
-    <api>beta</api>
-   </stability>
-   <date>2017-10-20</date>
-   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
-   <notes>
-* [jan] Add ISPConfig driver (Thomas Basler &lt;thomas@familie-basler.net&gt;).
-   </notes>
-  </release>
-  <release>
-   <version>
     <release>6.0.0alpha1</release>
     <api>6.0.0alpha1</api>
    </version>
@@ -1179,11 +1200,41 @@
     <release>alpha</release>
     <api>alpha</api>
    </stability>
-   <date>2021-03-15</date>
-   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0-only</license>
+   <date>2022-11-03</date>
+   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
 * [rla] Enable PHP 8.x compat.
 * |+
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>6.0.0alpha4</release>
+    <api>6.0.0alpha1</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2022-11-03</date>
+   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
+   <notes>
+* 
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>6.0.0</release>
+    <api>6.0.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2017-10-20</date>
+   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
+   <notes>
+* [jan] Add ISPConfig driver (Thomas Basler &lt;thomas@familie-basler.net&gt;).
    </notes>
   </release>
  </changelog>

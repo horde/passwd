@@ -1,4 +1,26 @@
 ---
+6.0.0:
+  api: 6.0.0
+  state:
+    release: beta
+    api: beta
+  date: 2017-10-20
+  license:
+    identifier: GPL-2.0
+    uri: http://www.horde.org/licenses/gpl
+  notes: |
+    [jan] Add ISPConfig driver (Thomas Basler <thomas@familie-basler.net>).
+6.0.0alpha4:
+  api: 6.0.0alpha1
+  state:
+    release: alpha
+    api: alpha
+  date: 2022-11-03
+  license:
+    identifier: GPL-2.0
+    uri: http://www.horde.org/licenses/gpl
+  notes: |+
+    
 6.0.0alpha3:
   api: 6.0.0alpha1
   state:
@@ -32,17 +54,6 @@
     uri: http://www.horde.org/licenses/gpl
   notes: |
     [rla] Initial composer plugin based release
-6.0.0:
-  api: 6.0.0
-  state:
-    release: beta
-    api: beta
-  date: 2017-10-20
-  license:
-    identifier: GPL-2.0
-    uri: http://www.horde.org/licenses/gpl
-  notes: |
-    [jan] Add ISPConfig driver (Thomas Basler <thomas@familie-basler.net>).
 5.0.8:
   api: 5.0.0
   state:
