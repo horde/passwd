@@ -1,5 +1,4 @@
 {
-    "minimum-stability": "dev",
     "name": "horde/passwd",
     "description": "Password changing application",
     "type": "horde-application",
@@ -17,15 +16,15 @@
             "role": "lead"
         }
     ],
-    "time": "2021-03-15",
+    "time": "2022-11-03",
     "repositories": [
         {
             "type": "composer",
-            "url": "https://horde-satis.maintaina.com/"
+            "url": "https://horde-satis.maintaina.com"
         }
     ],
     "require": {
-        "horde/horde-installer-plugin": "^2 || dev-FRAMEWORK_6_0",
+        "horde/horde-installer-plugin": "dev-FRAMEWORK_6_0 || ^2",
         "php": "^7.4 || ^8",
         "horde/horde": "^6 || dev-FRAMEWORK_6_0",
         "horde/auth": "^3 || dev-FRAMEWORK_6_0",
@@ -36,6 +35,7 @@
         "horde/view": "^3 || dev-FRAMEWORK_6_0",
         "ext-gettext": "*"
     },
+    "require-dev": {},
     "suggest": {
         "horde/db": "^3 || dev-FRAMEWORK_6_0",
         "horde/http": "^3 || dev-FRAMEWORK_6_0",
@@ -49,6 +49,16 @@
     "autoload": {
         "psr-0": {
             "Passwd": "lib/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Horde\\Passwd\\Test\\": "test/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "horde/horde-installer-plugin": true
         }
     }
 }

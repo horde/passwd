@@ -4,11 +4,13 @@
   state:
     release: alpha
     api: alpha
-  date: 2021-03-15
+  date: 2022-11-03
   license:
     identifier: GPL-2.0
     uri: http://www.horde.org/licenses/gpl
-  notes: |+   
+  notes: |
+    [rla] Enable PHP 8.x compat.
+    |+
 6.0.0alpha2:
   api: 6.0.0alpha1
   state:
@@ -29,7 +31,7 @@
     identifier: GPL-2.0
     uri: http://www.horde.org/licenses/gpl
   notes: |
-   [rla] Initial composer plugin based release
+    [rla] Initial composer plugin based release
 6.0.0:
   api: 6.0.0
   state:

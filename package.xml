@@ -16,7 +16,7 @@
   <email>slusarz@horde.org</email>
   <active>no</active>
  </lead>
- <date>2021-03-15</date>
+ <date>2022-11-03</date>
  <version>
   <release>6.0.0alpha3</release>
   <api>6.0.0alpha1</api>
@@ -25,12 +25,20 @@
   <release>alpha</release>
   <api>alpha</api>
  </stability>
- <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
+ <license uri="http://www.horde.org/licenses/gpl">GPL-2.0-only</license>
  <notes>
-* 
+* [rla] Enable PHP 8.x compat.
+* |+
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
+   <dir name=".github">
+    <dir name="workflows">
+     <file name="ci.yml" role="horde" />
+     <file name="phpdoc.yml" role="horde" />
+     <file name="update-satis.yml" role="horde" />
+    </dir> <!-- /.github/workflows -->
+   </dir> <!-- /.github -->
    <dir name="config">
     <file name=".htaccess" role="horde" />
     <file name="backends.php" role="horde" />
@@ -331,9 +339,9 @@
  <dependencies>
   <required>
    <php>
-    <min>7.0.0</min>
-    <max>8.0.0alpha1</max>
-    <exclude>8.0.0alpha1</exclude>
+    <min>7.4.0</min>
+    <max>9.0.0alpha1</max>
+    <exclude>9.0.0alpha1</exclude>
    </php>
    <pearinstaller>
     <min>1.7.0</min>
@@ -343,13 +351,6 @@
    </extension>
   </required>
   <optional>
-   <package>
-    <name>crypt_chap</name>
-    <channel>pear</channel>
-    <min>2.0.0</min>
-    <max>3.0.0alpha1</max>
-    <exclude>3.0.0alpha1</exclude>
-   </package>
    <extension>
     <name>com</name>
    </extension>
@@ -368,6 +369,9 @@
 </usesrole>
  <phprelease>
   <filelist>
+   <install as="passwd/.github/workflows/ci.yml" name=".github/workflows/ci.yml" />
+   <install as="passwd/.github/workflows/phpdoc.yml" name=".github/workflows/phpdoc.yml" />
+   <install as="passwd/.github/workflows/update-satis.yml" name=".github/workflows/update-satis.yml" />
    <install as="passwd/config/.htaccess" name="config/.htaccess" />
    <install as="passwd/config/backends.php" name="config/backends.php" />
    <install as="passwd/config/conf.xml" name="config/conf.xml" />
@@ -502,41 +506,6 @@
   </filelist>
  </phprelease>
  <changelog>
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
   <release>
    <version>
     <release>2.0.0</release>
@@ -1153,7 +1122,22 @@
    <date>2017-09-21</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
-* 
+* [jan] Add CSRF protection  (Midah Pasche &lt;midahannep@gmail.com&gt;, PR #1).
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>6.0.0</release>
+    <api>6.0.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2017-10-20</date>
+   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
+   <notes>
+* [jan] Add ISPConfig driver (Thomas Basler &lt;thomas@familie-basler.net&gt;).
    </notes>
   </release>
   <release>
@@ -1168,7 +1152,7 @@
    <date>2021-02-24</date>
    <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
    <notes>
-* [jan] Add ISPConfig driver (Thomas Basler &lt;thomas@familie-basler.net&gt;).
+* [rla] Initial composer plugin based release
    </notes>
   </release>
   <release>
@@ -1196,9 +1180,10 @@
     <api>alpha</api>
    </stability>
    <date>2021-03-15</date>
-   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0</license>
+   <license uri="http://www.horde.org/licenses/gpl">GPL-2.0-only</license>
    <notes>
-* 
+* [rla] Enable PHP 8.x compat.
+* |+
    </notes>
   </release>
  </changelog>
