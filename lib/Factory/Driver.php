@@ -32,6 +32,13 @@ class Passwd_Factory_Driver extends Horde_Core_Factory_Base
     private $_backends = null;
 
     /**
+     * Backends
+     *
+     * @var array
+     */
+    public $backends = array();
+
+    /**
      * Created Passwd_Driver instances.
      *
      * @var array
