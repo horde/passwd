@@ -13,13 +13,13 @@ class Passwd_Unit_Driver_SqlTest extends Passwd_TestCase
 {
     private $driver;
 
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         self::createBasicPasswdSetup(new Horde_Test_Setup());
         parent::setUpBeforeClass();
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         $GLOBALS['injector'] = $this->getInjector();
         $factory = new Passwd_Factory_Driver($this->getInjector());
@@ -42,11 +42,10 @@ class Passwd_Unit_Driver_SqlTest extends Passwd_TestCase
         $this->assertInstanceOf('Passwd_Driver', $this->driver);
     }
 
-    /**
-     * @expectedException Passwd_Exception
-     */
     public function testChangePasswordFailsForNonexistingUser()
     {
+        $this->expectException('Passwd_Exception');
+
         $res = $this->driver->changePassword('Patricia', 'alt', 'neu');
     }
 

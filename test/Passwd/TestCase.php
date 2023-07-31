@@ -8,7 +8,7 @@
  * @package    Passwd
  * @subpackage UnitTests
  */
-class Passwd_TestCase extends PHPUnit_Framework_TestCase
+class Passwd_TestCase extends Horde_Test_Case
 {
     protected function getInjector()
     {
