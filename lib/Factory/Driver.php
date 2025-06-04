@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2011-2017 Horde LLC (http://www.horde.org/)
  *
@@ -43,9 +44,9 @@ class Passwd_Factory_Driver extends Horde_Core_Factory_Base
     public function __get($name)
     {
         switch ($name) {
-        case 'backends':
-            $this->_loadBackends();
-            return $this->_backends;
+            case 'backends':
+                $this->_loadBackends();
+                return $this->_backends;
         }
     }
 
@@ -89,64 +90,64 @@ class Passwd_Factory_Driver extends Horde_Core_Factory_Base
             }
 
             switch ($class) {
-            case 'Passwd_Driver_Ldap':
-            case 'Passwd_Driver_Smbldap':
-                if (isset($backend['params']['admindn'])) {
-                    $backend['params']['binddn'] = $backend['params']['admindn'];
-                }
-                if (isset($backend['params']['adminpw'])) {
-                    $backend['params']['bindpw'] = $backend['params']['adminpw'];
-                }
-                if (isset($backend['params']['host'])) {
-                    $backend['params']['hostspec'] = $backend['params']['host'];
-                }
+                case 'Passwd_Driver_Ldap':
+                case 'Passwd_Driver_Smbldap':
+                    if (isset($backend['params']['admindn'])) {
+                        $backend['params']['binddn'] = $backend['params']['admindn'];
+                    }
+                    if (isset($backend['params']['adminpw'])) {
+                        $backend['params']['bindpw'] = $backend['params']['adminpw'];
+                    }
+                    if (isset($backend['params']['host'])) {
+                        $backend['params']['hostspec'] = $backend['params']['host'];
+                    }
 
-                try {
-                    $backend['params']['ldap'] = new Horde_Ldap($backend['params']);
-                } catch (Horde_Ldap_Exception $e) {
-                    throw new Passwd_Exception($e);
-                }
-                break;
-
-            case 'Passwd_Driver_Sql':
-            case 'Passwd_Driver_Vpopmail':
-                if (empty($backend['params']['db']) ||
-                    !($backend['params']['db'] instanceof Horde_Db_Adapter)) {
                     try {
-                        if (empty($backend['params'])) {
-                            $backend['params']['db'] = $this->_injector
-                                ->getInstance('Horde_Db_Adapter');
-                        } else {
-                            $params = $backend['params'];
-                            unset($params['table'], $params['user_col'],
-                                  $params['pass_col'], $params['encryption'],
-                                  $params['show_encryption'],
-                                  $params['query_lookup'], $params['query_modify']);
-                            $backend['params']['db'] = $this->_injector
-                                ->getInstance('Horde_Core_Factory_Db')
-                                ->create('passwd', $params);
-                        }
-                    } catch (Horde_Db_Exception $e) {
+                        $backend['params']['ldap'] = new Horde_Ldap($backend['params']);
+                    } catch (Horde_Ldap_Exception $e) {
                         throw new Passwd_Exception($e);
                     }
-                }
-                break;
+                    break;
 
-            case 'Passwd_Driver_Horde':
-                $backend['params']['auth'] = $this->_injector
-                    ->getInstance('Horde_Core_Factory_Auth')
-                    ->create();
-                break;
+                case 'Passwd_Driver_Sql':
+                case 'Passwd_Driver_Vpopmail':
+                    if (empty($backend['params']['db']) ||
+                        !($backend['params']['db'] instanceof Horde_Db_Adapter)) {
+                        try {
+                            if (empty($backend['params'])) {
+                                $backend['params']['db'] = $this->_injector
+                                    ->getInstance('Horde_Db_Adapter');
+                            } else {
+                                $params = $backend['params'];
+                                unset($params['table'], $params['user_col'],
+                                    $params['pass_col'], $params['encryption'],
+                                    $params['show_encryption'],
+                                    $params['query_lookup'], $params['query_modify']);
+                                $backend['params']['db'] = $this->_injector
+                                    ->getInstance('Horde_Core_Factory_Db')
+                                    ->create('passwd', $params);
+                            }
+                        } catch (Horde_Db_Exception $e) {
+                            throw new Passwd_Exception($e);
+                        }
+                    }
+                    break;
 
-            case 'Passwd_Driver_Soap':
-                if (!empty($GLOBALS['conf']['http']['proxy']['proxy_host'])) {
-                    $backend['params']['soap_params']['proxy_host'] = $GLOBALS['conf']['http']['proxy']['proxy_host'];
-                    $backend['params']['soap_params']['proxy_port'] = $GLOBALS['conf']['http']['proxy']['proxy_port'];
-                    $backend['params']['soap_params']['proxy_login'] = $GLOBALS['conf']['http']['proxy']['proxy_user'];
-                    $backend['params']['soap_params']['proxy_password'] = $GLOBALS['conf']['http']['proxy']['proxy_pass'];
-                }
-                $backend['params']['soap_params']['encoding'] = 'UTF-8';
-                break;
+                case 'Passwd_Driver_Horde':
+                    $backend['params']['auth'] = $this->_injector
+                        ->getInstance('Horde_Core_Factory_Auth')
+                        ->create();
+                    break;
+
+                case 'Passwd_Driver_Soap':
+                    if (!empty($GLOBALS['conf']['http']['proxy']['proxy_host'])) {
+                        $backend['params']['soap_params']['proxy_host'] = $GLOBALS['conf']['http']['proxy']['proxy_host'];
+                        $backend['params']['soap_params']['proxy_port'] = $GLOBALS['conf']['http']['proxy']['proxy_port'];
+                        $backend['params']['soap_params']['proxy_login'] = $GLOBALS['conf']['http']['proxy']['proxy_user'];
+                        $backend['params']['soap_params']['proxy_password'] = $GLOBALS['conf']['http']['proxy']['proxy_pass'];
+                    }
+                    $backend['params']['soap_params']['encoding'] = 'UTF-8';
+                    break;
             }
 
             try {

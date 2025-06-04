@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2000-2017 Horde LLC (http://www.horde.org/)
  *
@@ -115,7 +116,7 @@ class Passwd_Driver_Sql extends Passwd_Driver
             list($sql, $values) = $this->_parseQuery($this->_params['query_modify'], $user, $newpass);
         } else {
             /* Encrypt the password. */
-            $newpass= $this->_encryptPassword($newpass);
+            $newpass = $this->_encryptPassword($newpass);
 
             /* Build the SQL query. */
             $sql = 'UPDATE ' . $this->_params['table'] .
@@ -152,38 +153,38 @@ class Passwd_Driver_Sql extends Passwd_Driver
         for ($i = 0; $i < $length; $i++) {
             if ($string[$i] == '%' && !empty($string[$i + 1])) {
                 switch ($string[++$i]) {
-                case 'd':
-                    $query .= '?';
-                    $values[] = $domain;
-                    break;
+                    case 'd':
+                        $query .= '?';
+                        $values[] = $domain;
+                        break;
 
-                case 'u':
-                    $query .= '?';
-                    $values[] = $user;
-                    break;
+                    case 'u':
+                        $query .= '?';
+                        $values[] = $user;
+                        break;
 
-                case 'U':
-                    $query .= '?';
-                    $values[] = $username;
-                    break;
+                    case 'U':
+                        $query .= '?';
+                        $values[] = $username;
+                        break;
 
-                case 'p':
-                    $query .= '?';
-                    $values[] = $password;
-                    break;
+                    case 'p':
+                        $query .= '?';
+                        $values[] = $password;
+                        break;
 
-                case 'e':
-                    $query .= '?';
-                    $values[] = $this->_encryptPassword($password);
-                    break;
+                    case 'e':
+                        $query .= '?';
+                        $values[] = $this->_encryptPassword($password);
+                        break;
 
-                case '%':
-                    $query .= '%';
-                    break;
+                    case '%':
+                        $query .= '%';
+                        break;
 
-                default:
-                    $query .= '%' . $string[$i];
-                    break;
+                    default:
+                        $query .= '%' . $string[$i];
+                        break;
                 }
             } else {
                 $query .= $string[$i];

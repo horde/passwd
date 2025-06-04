@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2003-2017 Horde LLC (http://www.horde.org/)
  *
@@ -79,7 +80,7 @@ class Passwd_Driver_Composite extends Passwd_Driver
 
         foreach ($this->_drivers as $key => $driver) {
             try {
-                $driver->changePassword($user, $oldpass,  $newpass);
+                $driver->changePassword($user, $oldpass, $newpass);
             } catch (Passwd_Exception $e) {
                 throw new Passwd_Exception(sprintf(_("Failure in changing password for %s: %s"), $this->_params['drivers'][$key]['name'], $e->getMessage()));
             }

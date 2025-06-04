@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2016-2017 Horde LLC (http://www.horde.org/)
  *
@@ -32,12 +33,12 @@ class Passwd_Driver_Ispconfig extends Passwd_Driver
             'encryption' => 'crypt-md5',
             'show_encryption' => false,
         ), $params));
-        
+
         if (!class_exists('SoapClient')) {
             throw new Passwd_Exception('You need the soap PHP extension to use this driver.');
         }
         if (empty($this->_params['soap_uri']) ||
-            empty($this->_params['soap_user']) ) {
+            empty($this->_params['soap_user'])) {
             throw new Passwd_Exception('The Passwd Ispconfig driver is not properly configured, edit your passwd/config/backends.local.php.');
         }
     }
@@ -51,54 +52,64 @@ class Passwd_Driver_Ispconfig extends Passwd_Driver
         $client = new SoapClient(null, array(
             'location' => $soap_uri . 'index.php',
             'uri'      => $soap_uri));
-        
+
         // Login
         try {
             if (!$session_id = $client->login(
                 $this->_params['soap_user'],
-                $this->_params['soap_pass'])) {
+                $this->_params['soap_pass']
+            )) {
                 throw new Passwd_Exception(
-                    sprintf(_("Login to %s failed."), $soap_uri));
+                    sprintf(_("Login to %s failed."), $soap_uri)
+                );
             }
         } catch (SoapFault $e) {
             throw new Passwd_Exception($e);
         }
-        
+
         // Get user information
         try {
             $users = $client->mail_user_get(
                 $session_id,
-                array('login' => $user));
+                array('login' => $user)
+            );
         } catch (SoapFault $e) {
             throw new Passwd_Exception($e);
         }
         if (count($users) != 1) {
             throw new Passwd_Exception(
-                sprintf(_("%d users with login %s found, one expected."),
-                        count($users),
-                        $user));
+                sprintf(
+                    _("%d users with login %s found, one expected."),
+                    count($users),
+                    $user
+                )
+            );
         }
         $user = $users[0];
-        
+
         // Check the passwords match
         $this->_comparePasswords($user['password'], $oldpass);
-        
+
         // Set new password
         $user['password'] = $newpass;
-        
+
         // Save information
         try {
             $client->mail_user_update(
-                    $session_id, $user['client_id'],
-                    $user['mailuser_id'], $user);
+                $session_id,
+                $user['client_id'],
+                $user['mailuser_id'],
+                $user
+            );
         } catch (SoapFault $e) {
             throw new Passwd_Exception($e);
         }
-        
+
         // Logout
         try {
             $client->logout(
-                    $session_id);
+                $session_id
+            );
         } catch (SoapFault $e) {
             throw new Passwd_Exception($e);
         }

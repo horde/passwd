@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @author     Ralf Lang <lang@ralf-lang.de>
  * @category   Horde

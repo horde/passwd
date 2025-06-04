@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2003-2017 Horde LLC (http://www.horde.org/)
  *
@@ -23,13 +24,13 @@
 class Passwd_Driver_Pine extends Passwd_Driver
 {
     /** Lower boundary character. */
-    const FIRSTCH = 0x20;
+    public const FIRSTCH = 0x20;
 
     /** Upper boundary character. */
-    const LASTCH = 0x7e;
+    public const LASTCH = 0x7e;
 
     /** Median character. */
-    const TABSZ = 0x5f;
+    public const TABSZ = 0x5f;
 
     /**
      * Boolean which contains state of the ftp connection.
@@ -201,7 +202,7 @@ class Passwd_Driver_Pine extends Passwd_Driver
                         : ($eti >= self::TABSZ) ? self::TABSZ : 0;
                     $key  = $eti;
                     $tmp[$i] = chr($eti + self::FIRSTCH);
-                 }
+                }
             }
 
             $string .= $tmp;
@@ -221,8 +222,10 @@ class Passwd_Driver_Pine extends Passwd_Driver
     protected function _lookup($user, $oldPassword)
     {
         try {
-            $contents = $this->_ftp->read($this->_params['path'],
-                                          $this->_params['file']);
+            $contents = $this->_ftp->read(
+                $this->_params['path'],
+                $this->_params['file']
+            );
         } catch (Horde_Vfs_Exception $e) {
             throw new Passwd_Exception($e);
         }
@@ -261,9 +264,11 @@ class Passwd_Driver_Pine extends Passwd_Driver
 
         $string = $this->_encode($this->_contents);
         try {
-            $this->_ftp->writeData($this->_params['path'],
-                                   $this->_params['file'],
-                                   $string);
+            $this->_ftp->writeData(
+                $this->_params['path'],
+                $this->_params['file'],
+                $string
+            );
         } catch (Horde_Vfs_Exception $e) {
             throw new Passwd_Exception($e);
         }

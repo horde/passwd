@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file provides defaults for backends people use to change their
  * passwords.

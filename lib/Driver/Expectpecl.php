@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2006-2017 Horde LLC (http://www.horde.org/)
  *
@@ -53,20 +54,20 @@ class Passwd_Driver_Expectpecl extends Passwd_Driver
         ));
 
         switch ($result) {
-        case EXP_EOF:
-            throw new Passwd_Exception(_("End of file."));
+            case EXP_EOF:
+                throw new Passwd_Exception(_("End of file."));
 
-        case EXP_TIMEOUT:
-            throw new Passwd_Exception(_("Time out."));
+            case EXP_TIMEOUT:
+                throw new Passwd_Exception(_("Time out."));
 
-        case EXP_FULLBUFFER:
-            throw new Passwd_Exception(_("Full buffer."));
+            case EXP_FULLBUFFER:
+                throw new Passwd_Exception(_("Full buffer."));
 
-        case 'ok':
-            return;
+            case 'ok':
+                return;
 
-        default:
-            throw new Passwd_Exception($error);
+            default:
+                throw new Passwd_Exception($error);
         }
     }
 

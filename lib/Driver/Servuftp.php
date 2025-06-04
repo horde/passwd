@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2000-2017 Horde LLC (http://www.horde.org/)
  *
@@ -23,11 +24,11 @@
  */
 class Passwd_Driver_Servuftp extends Passwd_Driver
 {
-    const CONNECTED   = '220';
-    const GOODBYE     = '221';
-    const PASSWORDOK  = '230';
-    const USERNAMEOK  = '331';
-    const PASSWORDBAD = '530';
+    public const CONNECTED   = '220';
+    public const GOODBYE     = '221';
+    public const PASSWORDOK  = '230';
+    public const USERNAMEOK  = '331';
+    public const PASSWORDBAD = '530';
 
     /**
      */

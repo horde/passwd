@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2002-2017 Horde LLC (http://www.horde.org/)
  *
@@ -35,14 +36,14 @@ class Passwd_Driver_Vpopmail extends Passwd_Driver
      *
      * @var Horde_Db_Adapter
      */
-    protected  $_db;
+    protected $_db;
 
     /**
      * State of SQL connection.
      *
      * @var boolean
      */
-    protected  $_connected = false;
+    protected $_connected = false;
 
     /**
      */

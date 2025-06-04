@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2000-2017 Horde LLC (http://www.horde.org/)
  *
@@ -107,7 +108,8 @@ abstract class Passwd_Driver
     {
         try {
             $user = Horde::callHook('username', array($user, $this), 'passwd');
-        } catch (Horde_Exception_HookNotSet $e) {}
+        } catch (Horde_Exception_HookNotSet $e) {
+        }
 
         $this->_changePassword($user, $oldpass, $newpass);
     }
