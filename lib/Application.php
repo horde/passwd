@@ -48,5 +48,5 @@ class Passwd_Application extends Horde_Registry_Application
     /**
      * The version of passwd as shown in the admin view
      */
-    public $version = 'H6 (6.0.0alpha4)';
+    public $version = '6.0.0-alpha4';
 }

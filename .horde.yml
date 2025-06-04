@@ -22,7 +22,7 @@ authors:
     active: false
     role: lead
 version:
-  release: 6.0.0alpha4
+  release: 6.0.0-alpha4
   api: 6.0.0alpha1
 state:
   release: alpha
@@ -31,7 +31,7 @@ license:
   identifier: GPL-2.0-only
   uri: http://www.horde.org/licenses/gpl
 classmap:
-    - lib/
+  - lib/
 dependencies:
   required:
     php: ^8.1
