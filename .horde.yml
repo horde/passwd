@@ -30,9 +30,11 @@ state:
 license:
   identifier: GPL-2.0-only
   uri: http://www.horde.org/licenses/gpl
+classmap:
+    - lib/
 dependencies:
   required:
-    php: ^7.4 || ^8
+    php: ^8.1
     composer:
       horde/horde: ^6
       horde/auth: ^3
