@@ -179,8 +179,10 @@ class Passwd_Factory_Driver extends Horde_Core_Factory_Base
         if (!is_null($this->_backends)) {
             return;
         }
-
-        $allbackends = Horde::loadConfiguration('backends.php', 'backends', 'passwd');
+        // TODO: Inject instead
+        global $registry;
+        $oLoadconfig = $registry->loadConfigFile('backends.php', 'backends', 'passwd');
+        $allbackends = $oLoadconfig->config['backends'];
         if (!isset($allbackends) || !is_array($allbackends)) {
             throw new Passwd_Exception(_("No backends configured in backends.php"));
         }
