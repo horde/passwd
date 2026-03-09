@@ -128,8 +128,8 @@ class Passwd_Basic
         $view->addHelper('Tag');
 
         $view->formInput = Horde_Util::formInput();
-        $view->url = $this->_vars->return_to;
-        $view->userid = $this->_userid;
+        $view->url = $this->_vars->return_to ?: '';
+        $view->userid = $this->_userid ?: '';
         $view->userChange = $conf['user']['change'];
         $view->showlist = ($conf['backend']['backend_list'] == 'shown');
         $view->backend = $backend_key;
