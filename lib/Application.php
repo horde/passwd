@@ -49,4 +49,28 @@ class Passwd_Application extends Horde_Registry_Application
      * The version of passwd as shown in the admin view
      */
     public $version = '6.0.0-alpha4';
+
+    /**
+     * Supported features.
+     */
+    public $features = [
+        'smartmobileView' => true,
+    ];
+
+    /**
+     * Returns the initial page for the application.
+     *
+     * @return Horde_Url  The initial page URL.
+     */
+    public function getInitialPage()
+    {
+        // Route based on current view
+        switch ($GLOBALS['registry']->getView()) {
+            case Horde_Registry::VIEW_SMARTMOBILE:
+                return Horde::url('smartmobile.php');
+
+            default:
+                return Horde::url('index.php');
+        }
+    }
 }
