@@ -1,0 +1,23 @@
+/**
+ * Passwd Responsive Styles
+ * Extends base responsive.css with Passwd-specific components
+ *
+ * Copyright 2026 Horde LLC (http://www.horde.org/)
+ */
+
+/* ============================================================================
+   App Icon Override
+   ========================================================================= */
+
+/* Override Horde base icon with Passwd-specific icon */
+.topbar-menu-app-passwd::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('graphics/passwd.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+}
