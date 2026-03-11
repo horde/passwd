@@ -78,8 +78,8 @@ class ResponsivePasswordController implements RequestHandlerInterface
             // Topbar data
             'topbar' => [
                 'appName' => _("Change Password"),
-                'portalUrl' => (string) $registry->getServiceLink('portal')->setRaw(false),
-                'logoutUrl' => (string) $registry->getServiceLink('logout')->setRaw(false),
+                'portalUrl' => (string) $registry->getServiceLink('portal')->setRaw(true),
+                'logoutUrl' => (string) $registry->getServiceLink('logout')->setRaw(true),
                 'userName' => $registry->getAuth(),
             ],
 
