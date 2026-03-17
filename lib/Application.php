@@ -54,7 +54,7 @@ class Passwd_Application extends Horde_Registry_Application
      * Supported features.
      */
     public $features = [
-        'smartmobileView' => true,
+        'smartmobileView' => true,  // Redirect to responsive UI
     ];
 
     /**
@@ -67,7 +67,7 @@ class Passwd_Application extends Horde_Registry_Application
         // Route based on current view
         switch ($GLOBALS['registry']->getView()) {
             case Horde_Registry::VIEW_SMARTMOBILE:
-                return Horde::url('smartmobile.php');
+                return Horde::url('responsive');
 
             default:
                 return Horde::url('index.php');
