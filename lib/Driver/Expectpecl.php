@@ -75,7 +75,7 @@ class Passwd_Driver_Expectpecl extends Passwd_Driver
      */
     protected function _changePassword($user, $oldpass, $newpass)
     {
-        if (!Horde_Util::loadExtension('expect')) {
+        if (!extension_loaded('expect')) {
             throw new Passwd_Exception(_("expect extension cannot be loaded"));
         }
 
