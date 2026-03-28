@@ -22,10 +22,10 @@ authors:
     active: false
     role: lead
 version:
-  release: 6.0.0-alpha4
+  release: 6.0.0-beta1
   api: 6.0.0alpha1
 state:
-  release: alpha
+  release: beta
   api: alpha
 license:
   identifier: GPL-2.0-only
@@ -56,3 +56,9 @@ dependencies:
       com: '*'
       ldap: '*'
       soap: '*'
+autoload:
+  classmap:
+    - lib/
+  psr-4:
+    Horde\Passwd\: /src
+vendor: horde
