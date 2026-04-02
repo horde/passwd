@@ -3,7 +3,7 @@
 /**
  * Test the Sql backend driver.
  *
- * @author     Ralf Lang <lang@b1-systems.de>
+ * @author     Ralf Lang <ralf.lang@ralf-lang.de>
  * @category   Horde
  * @copyright  2013 Horde LLC
  * @internal

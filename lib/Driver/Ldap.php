@@ -18,7 +18,7 @@
  *
  * @author    Mike Cochrane <mike@graftonhall.co.nz>
  * @author    Mattias Webjörn Eriksson <mattias@webjorn.org>
- * @author    Ralf Lang <lang@b1-systems.de>
+ * @author    Ralf Lang <ralf.lang@ralf-lang.de>
  * @author    Eric Jon Rostetter <eric.rostetter@physics.utexas.edu>
  * @author    Jan Schneider <jan@horde.org>
  * @author    Tjeerd van der Zee <admin@xar.nl>
