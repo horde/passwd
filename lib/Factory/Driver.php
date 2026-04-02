@@ -15,7 +15,7 @@
 /**
  * A Horde_Injector based Passwd_Driver factory.
  *
- * @author    Ralf Lang <lang@b1-systems.de>
+ * @author    Ralf Lang <ralf.lang@ralf-lang.de>
  * @category  Horde
  * @copyright 2011-2017 Horde LLC
  * @license   http://www.horde.org/licenses/gpl.php

@@ -18,7 +18,7 @@
  * @author    Mike Cochrane <mike@graftonhall.co.nz>
  * @author    Mattias Webjörn Eriksson <mattias@webjorn.org>
  * @author    Ilya Krel <mail@krel.org>
- * @author    Ralf Lang <lang@b1-systems.de> (H4 conversion)
+ * @author    Ralf Lang <ralf.lang@ralf-lang.de> (H4 conversion)
  * @author    Eric Jon Rostetter <eric.rostetter@physics.utexas.edu>
  * @author    Tjeerd van der Zee <admin@xar.nl>
  * @category  Horde
