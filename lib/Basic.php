@@ -1,5 +1,7 @@
 <?php
 
+use Horde\Util\Variables;
+
 /**
  * Copyright 2000-2017 Horde LLC (http://www.horde.org/)
  *
@@ -50,7 +52,7 @@ class Passwd_Basic
 
     /**
      */
-    public function __construct(Horde_Variables $vars)
+    public function __construct(Variables|Horde_Variables $vars)
     {
         global $conf, $injector, $registry;
 
