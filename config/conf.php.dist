@@ -1,0 +1,20 @@
+<?php
+/* CONFIG START. DO NOT CHANGE ANYTHING IN OR AFTER THIS LINE. */
+// $Hash: 2ce68fd05ee743de5853aa35efc2ce112021fafa
+// $Id$
+
+// Should we show or hide the backend list: shown, hidden 
+$conf['backend']['backend_list'] = 'hidden';
+// Which users cannot be chosen
+$conf['user']['refused'] = array('root', 'bin', 'daemon', 'adm', 'lp', 'shutdown', 'halt', 'uucp', 'ftp', 'anonymous', 'nobody', 'httpd', 'operator', 'guest', 'diginext', 'bind', 'cyrus', 'courier', 'games', 'kmem', 'mailnull', 'man', 'mysql', 'news', 'postfix', 'sshd', 'tty', 'www');
+$conf['password']['strengthtests'] = true;
+
+// Should we allow the user to specify the   username?
+$conf['user']['change'] = false;
+
+
+// Should strength tests be done on   the new password?
+$conf['password']['strengthtests'] = true;
+
+
+/* CONFIG END. DO NOT CHANGE ANYTHING IN OR BEFORE THIS LINE. */
