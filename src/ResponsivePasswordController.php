@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Horde\Passwd;
 
 use Horde\Core\Assets\ResponsiveAssets;
+use Horde\Core\Config\RegistryState;
 use Horde\Core\View\ResponsiveTemplateView;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -45,7 +46,7 @@ class ResponsivePasswordController implements RequestHandlerInterface
         $basic = new \Passwd_Basic($vars);
 
         // Build responsive assets
-        $responsiveAssets = new ResponsiveAssets($registry);
+        $responsiveAssets = new ResponsiveAssets(new RegistryState($registry->applications));
 
         // Get backend info
         $backends = $injector->getInstance('Passwd_Factory_Driver')->backends;
