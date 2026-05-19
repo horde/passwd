@@ -69,6 +69,24 @@
   notes: |
     Original version string was 6.0.0alpha1
     [rla] Initial composer plugin based release
+6.0.0-RC1:
+  api: 6.0.0-RC1
+  state:
+    release: RC
+    api: RC
+  date: 2026-05-19
+  license:
+    identifier: GPL-2.0-only
+    uri: https://spdx.org/licenses/GPL-2.0-only.html
+  notes: |-
+    style: Update passwd icon
+    refactor: Explicitly declare the default stack as a prestep to removing fallback logic
+    refactor(registry): Evolve to a format more independent of legacy stack
+    feat: Add a template conf.php
+    refactor: Turn prototypejs-heavy javascript into vanilla javascript
+    docs: Clarify where to put local overrides
+    chore: it was good while it lasted
+    fix: Support both old-style Horde_Variables and modern Horde\Util\Variables
 6.0.0:
   api: 6.0.0
   state:
