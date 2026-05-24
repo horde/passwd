@@ -3,3 +3,82 @@
  *
  * Copyright 2026 Horde LLC (http://www.horde.org/)
  */
+
+/* ============================================================================
+   Responsive View (scoped under .horde-responsive)
+   ============================================================================ */
+
+.horde-responsive .topbar-menu-app-passwd::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('graphics/passwd.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+}
+
+/* Password form layout */
+.horde-responsive .passwd-container {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-2xl);
+}
+
+.horde-responsive .passwd-card {
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.horde-responsive #passwd-form {
+    margin-top: var(--space-lg);
+}
+
+.horde-responsive #passwd-backend {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23666' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right var(--space-md) center;
+    background-size: 12px 8px;
+    padding-right: calc(var(--space-md) + 20px);
+}
+
+.horde-responsive .info-message {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+    background-color: #e3f2fd;
+    border-left: 4px solid #2196f3;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+}
+
+.horde-responsive .info-icon {
+    flex-shrink: 0;
+    font-size: var(--font-size-lg);
+    line-height: 1;
+}
+
+.horde-responsive .info-text {
+    flex: 1;
+    color: var(--text-primary);
+}
+
+.horde-responsive .info-text strong {
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+}
+
+@media (max-width: 480px) {
+    .horde-responsive .passwd-container {
+        padding-top: var(--space-md);
+    }
+
+    .horde-responsive .passwd-card {
+        border-radius: var(--radius-md);
+    }
+}
