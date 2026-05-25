@@ -69,6 +69,20 @@
   notes: |
     Original version string was 6.0.0alpha1
     [rla] Initial composer plugin based release
+6.0.0-RC2:
+  api: 6.0.0-RC2
+  state:
+    release: RC
+    api: RC
+  date: 2026-05-25
+  license:
+    identifier: GPL-2.0-only
+    uri: https://spdx.org/licenses/GPL-2.0-only.html
+  notes: |-
+    docs: add Lucide Icons license notice
+    refactor(responsive): use ResponsiveChromeRenderer, consolidate CSS
+    fix(themes): add screen.css stub for theme discovery
+    chore: Update workflow dependency
 6.0.0-RC1:
   api: 6.0.0-RC1
   state:
