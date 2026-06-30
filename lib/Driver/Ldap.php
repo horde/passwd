@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2000-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2000-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (GPL). If you
  * did not receive this file, see http://www.horde.org/licenses/gpl.
@@ -45,9 +45,9 @@ class Passwd_Driver_Ldap extends Passwd_Driver
 
     /**
      */
-    public function __construct(array $params = array())
+    public function __construct(array $params = [])
     {
-        foreach (array('basedn', 'ldap', 'uid') as $val) {
+        foreach (['basedn', 'ldap', 'uid'] as $val) {
             if (!isset($params[$val])) {
                 throw new InvalidArgumentException(__CLASS__ . ': Missing ' . $val . ' parameter.');
             }
@@ -56,7 +56,7 @@ class Passwd_Driver_Ldap extends Passwd_Driver
         $this->_ldap = $params['ldap'];
         unset($params['ldap']);
 
-        parent::__construct(array_merge(array(
+        parent::__construct(array_merge([
             'host' => 'localhost',
             'port' => 389,
             'encryption' => 'crypt',
@@ -70,11 +70,11 @@ class Passwd_Driver_Ldap extends Passwd_Driver
             'tls' => false,
             'attribute' => 'userPassword',
             'shadowlastchange' => '',
-            'shadowmin' => ''
-        ), $params));
+            'shadowmin' => '',
+        ], $params));
 
-        if (!empty($this->_params['tls']) &&
-            empty($this->_params['sslhost'])) {
+        if (!empty($this->_params['tls'])
+            && empty($this->_params['sslhost'])) {
             $this->_params['sslhost'] = $this->_params['host'];
         }
     }
@@ -112,7 +112,7 @@ class Passwd_Driver_Ldap extends Passwd_Driver
                 $this->_userdn = $injector->getInstance('Horde_Core_Hooks')->callHook(
                     'userdn',
                     'passwd',
-                    array($user)
+                    [$user]
                 );
             } catch (Horde_Exception_HookNotSet $e) {
                 // @todo Fix finding the user DN.
@@ -147,35 +147,35 @@ class Passwd_Driver_Ldap extends Passwd_Driver
         }
 
         // Init the shadow policy array.
-        $lookupshadow = array(
+        $lookupshadow = [
             'shadowlastchange' => false,
-            'shadowmin' => false
-        );
+            'shadowmin' => false,
+        ];
         foreach (array_keys($lookupshadow) as $val) {
-            if (!empty($this->_params[$val]) &&
-                $entry->exists($this->_params[$val])) {
+            if (!empty($this->_params[$val])
+                && $entry->exists($this->_params[$val])) {
                 $lookupshadow[$val] = $entry->getValue($this->_params[$val]);
             }
         }
 
         // Check if we may change the password.
-        if ($lookupshadow['shadowlastchange'] &&
-            $lookupshadow['shadowmin'] &&
-            (($lookupshadow['shadowlastchange'] + $lookupshadow['shadowmin']) > (time() / 86400))) {
+        if ($lookupshadow['shadowlastchange']
+            && $lookupshadow['shadowmin']
+            && (($lookupshadow['shadowlastchange'] + $lookupshadow['shadowmin']) > (time() / 86400))) {
             throw new Passwd_Exception(_("Minimum password age has not yet expired"));
         }
 
         // Change the user's password and update lastchange.
         try {
-            $entry->replace(array(
-                $this->_params['attribute'] => $this->_encryptPassword($newpass)
-            ), true);
+            $entry->replace([
+                $this->_params['attribute'] => $this->_encryptPassword($newpass),
+            ], true);
 
-            if (!empty($this->_params['shadowlastchange']) &&
-                $lookupshadow['shadowlastchange']) {
-                $entry->replace(array(
-                    $this->_params['shadowlastchange'] => floor(time() / 86400)
-                ));
+            if (!empty($this->_params['shadowlastchange'])
+                && $lookupshadow['shadowlastchange']) {
+                $entry->replace([
+                    $this->_params['shadowlastchange'] => floor(time() / 86400),
+                ]);
             }
 
             $entry->update();

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2011-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2011-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (GPL). If you
  * did not receive this file, see http://www.horde.org/licenses/gpl.
@@ -39,11 +39,11 @@ class Passwd_Driver_Horde extends Passwd_Driver
 
         /* Check the provided old password. */
         try {
-            if ($auth->authenticate($user, array('password' => $oldpass, false))) {
+            if ($auth->authenticate($user, ['password' => $oldpass, false])) {
                 /* Actually modify the password. */
-                $auth->updateUser($user, $user, array(
-                    'password' => $newpass
-                ));
+                $auth->updateUser($user, $user, [
+                    'password' => $newpass,
+                ]);
             } else {
                 throw new Passwd_Exception(_("Incorrect old password."));
             }

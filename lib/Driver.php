@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2000-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2000-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (GPL). If you
  * did not receive this file, see http://www.horde.org/licenses/gpl.
@@ -29,14 +29,14 @@ abstract class Passwd_Driver
      *
      * @var array
      */
-    protected $_params = array();
+    protected $_params = [];
 
     /**
      * Constructor.
      *
      * @param $params  A hash containing connection parameters.
      */
-    public function __construct(array $params = array())
+    public function __construct(array $params = [])
     {
         $this->_params = $params;
     }
@@ -107,7 +107,12 @@ abstract class Passwd_Driver
     public function changePassword($user, $oldpass, $newpass)
     {
         try {
-            $user = Horde::callHook('username', array($user, $this), 'passwd');
+            /**
+             * ARCHITECTURE VIOLATION: Using deprecated Horde::callHook()
+             * @deprecated Use $GLOBALS['injector']->getInstance('Horde_Core_Hooks')->callHook() instead
+             * @see Horde_Deprecated::callHook()
+             */
+$user = Horde::callHook('username', [$user, $this], 'passwd');
         } catch (Horde_Exception_HookNotSet $e) {
         }
 

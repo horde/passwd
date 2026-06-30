@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2006-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2006-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (GPL). If you
  * did not receive this file, see http://www.horde.org/licenses/gpl.
@@ -15,7 +15,7 @@
 /**
  * A PECL expect implementation of the Passwd system.
  *
- * Copyright 2006-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2006-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (GPL). If you
  * did not receive this file, see http://www.horde.org/licenses/gpl.
@@ -45,13 +45,13 @@ class Passwd_Driver_Expectpecl extends Passwd_Driver
      */
     protected function _ctl($expect, $error)
     {
-        $result = expect_expectl($this->_stream, array(
-            array(
+        $result = expect_expectl($this->_stream, [
+            [
                 0 => $expect,
                 1 => 'ok',
-                2 => EXP_REGEXP
-            )
-        ));
+                2 => EXP_REGEXP,
+            ],
+        ]);
 
         switch ($result) {
             case EXP_EOF:
@@ -80,7 +80,7 @@ class Passwd_Driver_Expectpecl extends Passwd_Driver
         }
 
         // Set up parameters
-        foreach (array('logfile', 'loguser', 'timeout') as $val) {
+        foreach (['logfile', 'loguser', 'timeout'] as $val) {
             if (isset($this->_params[$val])) {
                 ini_set('expect.' . $val, $this->_params[$val]);
             }

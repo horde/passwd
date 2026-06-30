@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2009-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2009-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (GPL). If you
  * did not receive this file, see http://www.horde.org/licenses/gpl.
@@ -25,15 +25,15 @@ class Passwd_Driver_Soap extends Passwd_Driver
 {
     /**
      */
-    public function __construct(array $params = array())
+    public function __construct(array $params = [])
     {
         if (!class_exists('SoapClient')) {
             throw new Passwd_Exception('You need the soap PHP extension to use this driver.');
         }
 
-        if (empty($params['wsdl']) &&
-            (empty($params['soap_params']['location']) ||
-             empty($params['soap_params']['uri']))) {
+        if (empty($params['wsdl'])
+            && (empty($params['soap_params']['location'])
+             || empty($params['soap_params']['uri']))) {
             throw new Passwd_Exception('Either the "wsdl" or the "location" and "uri" parameter must be provided.');
         }
 
@@ -50,7 +50,7 @@ class Passwd_Driver_Soap extends Passwd_Driver
      */
     protected function _changePassword($user, $oldpass, $newpass)
     {
-        $args = array();
+        $args = [];
         if (($pos = array_search('username', $this->_params['arguments'])) !== false) {
             $args[$pos] = $user;
         }

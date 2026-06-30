@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2016-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2016-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (GPL). If you
  * did not receive this file, see http://www.horde.org/licenses/gpl.
@@ -26,19 +26,19 @@ class Passwd_Driver_Ispconfig extends Passwd_Driver
 {
     /**
      */
-    public function __construct(array $params = array())
+    public function __construct(array $params = [])
     {
         // Default ISPConfig encryption settings
-        parent::__construct(array_merge(array(
+        parent::__construct(array_merge([
             'encryption' => 'crypt-md5',
             'show_encryption' => false,
-        ), $params));
+        ], $params));
 
         if (!class_exists('SoapClient')) {
             throw new Passwd_Exception('You need the soap PHP extension to use this driver.');
         }
-        if (empty($this->_params['soap_uri']) ||
-            empty($this->_params['soap_user'])) {
+        if (empty($this->_params['soap_uri'])
+            || empty($this->_params['soap_user'])) {
             throw new Passwd_Exception('The Passwd Ispconfig driver is not properly configured, edit your passwd/config/backends.local.php.');
         }
     }
@@ -49,9 +49,9 @@ class Passwd_Driver_Ispconfig extends Passwd_Driver
     {
         // Connect
         $soap_uri = $this->_params['soap_uri'];
-        $client = new SoapClient(null, array(
+        $client = new SoapClient(null, [
             'location' => $soap_uri . 'index.php',
-            'uri'      => $soap_uri));
+            'uri'      => $soap_uri]);
 
         // Login
         try {
@@ -71,7 +71,7 @@ class Passwd_Driver_Ispconfig extends Passwd_Driver
         try {
             $users = $client->mail_user_get(
                 $session_id,
-                array('login' => $user)
+                ['login' => $user]
             );
         } catch (SoapFault $e) {
             throw new Passwd_Exception($e);

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2000-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2000-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (GPL). If you
  * did not receive this file, see http://www.horde.org/licenses/gpl.
@@ -36,15 +36,15 @@ class Passwd_Driver_Servuftp extends Passwd_Driver
 
     /**
      */
-    public function __construct(array $params = array())
+    public function __construct(array $params = [])
     {
         if (empty($params['host']) || empty($params['port'])) {
             throw new Passwd_Exception(_("Password module is missing required parameters."));
         }
 
-        parent::__construct(array_merge(array(
-            'timeout' => 30
-        ), $params));
+        parent::__construct(array_merge([
+            'timeout' => 30,
+        ], $params));
     }
 
     /**
@@ -65,7 +65,7 @@ class Passwd_Driver_Servuftp extends Passwd_Driver
             throw new Passwd_Exception(_("Incorrect password"));
         }
 
-        if ($this->_sendCommand('site pswd', '"' . $oldpass. '" "' . $newpass. '"') != self::PASSWORDOK) {
+        if ($this->_sendCommand('site pswd', '"' . $oldpass . '" "' . $newpass . '"') != self::PASSWORDOK) {
             $this->_disconnect();
             throw new Passwd_Exception(_("Cannot change password"));
         }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright 2013-2026 The Horde Project (http://www.horde.org/)
  *
@@ -24,6 +25,4 @@ namespace Horde\Passwd;
  * @license   http://www.horde.org/licenses/gpl GPL-2.0-only
  * @package   Passwd
  */
-class Passwd
-{
-}
+class Passwd {}

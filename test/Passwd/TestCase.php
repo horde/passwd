@@ -8,6 +8,7 @@
  * @license    http://www.horde.org/licenses/gpl GPL
  * @package    Passwd
  * @subpackage UnitTests
+ * @coversNothing
  */
 class Passwd_TestCase extends PHPUnit_Framework_TestCase
 {
@@ -19,18 +20,18 @@ class Passwd_TestCase extends PHPUnit_Framework_TestCase
     protected static function createBasicPasswdSetup(Horde_Test_Setup $setup)
     {
         $setup->setup(
-            array(
-                '_PARAMS' => array(
+            [
+                '_PARAMS' => [
                     'user' => 'test@example.com',
-                    'app' => 'passwd'
-                ),
+                    'app' => 'passwd',
+                ],
                 'Horde_Registry' => 'Registry',
-            )
+            ]
         );
         $setup->makeGlobal(
-            array(
+            [
                 'registry' => 'Horde_Registry',
-            )
+            ]
         );
     }
 

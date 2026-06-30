@@ -10,6 +10,8 @@ use Horde\Core\View\ResponsiveTemplateView;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
+use Horde\Util\Util;
+use Horde;
 
 /**
  * Responsive Password Controller
@@ -57,7 +59,7 @@ class ResponsivePasswordController implements RequestHandlerInterface
         }
 
         $viewData = [
-            'formInput' => \Horde_Util::formInput(),
+            'formInput' => \Util::formInput(),
             'url' => $vars->return_to ?: '',
             'userid' => $registry->getAuth() ?: '',
             'userChange' => $conf['user']['change'] ?? false,
@@ -106,8 +108,8 @@ class ResponsivePasswordController implements RequestHandlerInterface
             );
         }
 
-        \Horde::startBuffer();
+        Horde::startBuffer();
         $notification->notify(['listeners' => ['responsive_status']]);
-        return \Horde::endBuffer();
+        return Horde::endBuffer();
     }
 }

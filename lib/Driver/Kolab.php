@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2005-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2005-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (GPL). If you
  * did not receive this file, see http://www.horde.org/licenses/gpl.
@@ -80,8 +80,8 @@ class Passwd_Driver_Kolab extends Passwd_Driver
         }
 
         // And finally change the password.
-        $new_details['userPassword'] = '{sha}' .
-            base64_encode(pack('H*', sha1($newpass)));
+        $new_details['userPassword'] = '{sha}'
+            . base64_encode(pack('H*', sha1($newpass)));
 
         if (!ldap_mod_replace($ds, $userdn, $new_details)) {
             throw new Passwd_Exception(ldap_error($ds));

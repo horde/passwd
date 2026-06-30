@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2000-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2000-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (GPL). If you
  * did not receive this file, see http://www.horde.org/licenses/gpl.
@@ -25,12 +25,12 @@ class Passwd_Driver_Poppassd extends Passwd_Driver
 {
     /**
      */
-    public function __construct(array $params = array())
+    public function __construct(array $params = [])
     {
-        parent::__construct(array_merge(array(
+        parent::__construct(array_merge([
             'host' => 'localhost',
-            'port' => 106
-        ), $params));
+            'port' => 106,
+        ], $params));
     }
 
     /**
@@ -82,7 +82,7 @@ class Passwd_Driver_Poppassd extends Passwd_Driver
 
         /* This should probably be a regex match for 2?0 or 3?0, no? */
         $rc = substr($prompt, 0, 3);
-        if (!in_array($rc, array('200', '220', '250', '300'))) {
+        if (!in_array($rc, ['200', '220', '250', '300'])) {
             throw new Passwd_Exception($prompt);
         }
     }

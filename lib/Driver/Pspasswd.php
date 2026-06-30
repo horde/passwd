@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2004-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2004-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (GPL). If you
  * did not receive this file, see http://www.horde.org/licenses/gpl.
@@ -71,12 +71,12 @@ class Passwd_Driver_Pspasswd extends Passwd_Driver
 {
     /**
      */
-    public function __construct(array $params = array())
+    public function __construct(array $params = [])
     {
-        if (empty($params['server']) ||
-            empty($params['bin']) ||
-            empty($params['admusr']) ||
-            empty($params['admpwd'])) {
+        if (empty($params['server'])
+            || empty($params['bin'])
+            || empty($params['admusr'])
+            || empty($params['admpwd'])) {
             throw new Passwd_Exception(_("Password module is missing required parameters."));
         }
 
@@ -112,11 +112,11 @@ class Passwd_Driver_Pspasswd extends Passwd_Driver
 
         exec('NET USE \\\\' . $server . '\\IPC$ /D >NUL 2>NUL');
 
-        $cmdline = $this->_params['bin'] . ' \\\\' . $server . ' -u ' . $chpwd_adm . ' -p ' . $this->_params['admpwd'] . ' ' . $user. ' ' . $newpass;
+        $cmdline = $this->_params['bin'] . ' \\\\' . $server . ' -u ' . $chpwd_adm . ' -p ' . $this->_params['admpwd'] . ' ' . $user . ' ' . $newpass;
         exec($cmdline, $cmdreply, $retval);
         exec('NET USE \\\\' . $server . '\\IPC$ /D >NUL 2>NUL');
 
-        if (strpos(implode(' ', $cmdreply), 'Password for ' . $server . '\\' . $user. ' successfully changed.') === false) {
+        if (strpos(implode(' ', $cmdreply), 'Password for ' . $server . '\\' . $user . ' successfully changed.') === false) {
             throw new Passwd_Exception(_("Access Denied."));
         }
     }

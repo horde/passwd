@@ -1,9 +1,10 @@
 <?php
 
 use Horde\Util\Variables;
+use Horde\Util\Util;
 
 /**
- * Copyright 2000-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2000-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (GPL). If you
  * did not receive this file, see http://www.horde.org/licenses/gpl.
@@ -61,7 +62,12 @@ class Passwd_Basic
             $this->_userid = $vars->get('userid', $this->_userid);
         } else {
             try {
-                $this->_userid = Horde::callHook('default_username', array(), 'passwd');
+                /**
+                 * ARCHITECTURE VIOLATION: Using deprecated Horde::callHook()
+                 * @deprecated Use $GLOBALS['injector']->getInstance('Horde_Core_Hooks')->callHook() instead
+                 * @see Horde_Deprecated::callHook()
+                 */
+$this->_userid = Horde::callHook('default_username', [], 'passwd');
             } catch (Horde_Exception_HookNotSet $e) {
             }
         }
@@ -84,7 +90,7 @@ class Passwd_Basic
     public function status()
     {
         Horde::startBuffer();
-        $GLOBALS['notification']->notify(array('listeners' => array('status')));
+        $GLOBALS['notification']->notify(['listeners' => ['status']]);
         return Horde::endBuffer();
     }
 
@@ -121,15 +127,15 @@ class Passwd_Basic
             }
         }
 
-        $view = new Horde_View(array(
-            'templatePath' => PASSWD_TEMPLATES
-        ));
+        $view = new Horde_View([
+            'templatePath' => PASSWD_TEMPLATES,
+        ]);
         $view->addHelper('FormTag');
         $view->addHelper('Horde_Core_View_Helper_Help');
         $view->addHelper('Horde_Core_View_Helper_Label');
         $view->addHelper('Tag');
 
-        $view->formInput = Horde_Util::formInput();
+        $view->formInput = Util::formInput();
         $view->url = $this->_vars->return_to ?: '';
         $view->userid = $this->_userid ?: '';
         $view->userChange = $conf['user']['change'];
@@ -150,14 +156,14 @@ class Passwd_Basic
         $page_output->addScriptFile('stripe.js', 'horde');
         $page_output->addScriptFile('passwd.js');
 
-        $page_output->addInlineJsVars(array(
-            'var Passwd' => array(
+        $page_output->addInlineJsVars([
+            'var Passwd' => [
                 'current_pass' => _("Please provide your current password"),
                 'new_pass' => _("Please provide a new password"),
                 'verify_pass' => _("Please verify your new password"),
                 'no_match' => _("Your passwords do not match"),
-            )
-        ));
+            ],
+        ]);
 
         $this->_output = $view->render('index');
     }
@@ -203,7 +209,7 @@ class Passwd_Basic
         $b_ptr = $this->_backends[$backend_key];
 
         try {
-            Horde_Auth::checkPasswordPolicy($this->_vars->newpassword0, isset($b_ptr['policy']) ? $b_ptr['policy'] : array());
+            Horde_Auth::checkPasswordPolicy($this->_vars->newpassword0, $b_ptr['policy'] ?? []);
         } catch (Horde_Auth_Exception $e) {
             $notification->push($e, 'horde.warning');
             return;
@@ -212,7 +218,7 @@ class Passwd_Basic
         // Do some simple strength tests, if enabled in the config file.
         if (!empty($conf['password']['strengthtests'])) {
             try {
-                Horde_Auth::checkPasswordSimilarity($this->_vars->newpassword0, array($this->_userid, $this->_vars->oldpassword));
+                Horde_Auth::checkPasswordSimilarity($this->_vars->newpassword0, [$this->_userid, $this->_vars->oldpassword]);
             } catch (Horde_Auth_Exception $e) {
                 $notification->push($e, 'horde.warning');
                 return;
@@ -241,15 +247,20 @@ class Passwd_Basic
         $notification->push(sprintf(_("Password changed on %s."), $b_ptr['name']), 'horde.success');
 
         try {
-            Horde::callHook('password_changed', array($this->_userid, $this->_vars->oldpassword, $this->_vars->newpassword0), 'passwd');
+            /**
+             * ARCHITECTURE VIOLATION: Using deprecated Horde::callHook()
+             * @deprecated Use $GLOBALS['injector']->getInstance('Horde_Core_Hooks')->callHook() instead
+             * @see Horde_Deprecated::callHook()
+             */
+Horde::callHook('password_changed', [$this->_userid, $this->_vars->oldpassword, $this->_vars->newpassword0], 'passwd');
         } catch (Horde_Exception_HookNotSet $e) {
         }
 
         if (!empty($b_ptr['logout'])) {
-            $logout_url = $registry->getLogoutUrl(array(
+            $logout_url = $registry->getLogoutUrl([
                 'msg' => _("Your password has been succesfully changed. You need to re-login to the system with your new password."),
-                'reason' => Horde_Auth::REASON_MESSAGE
-            ));
+                'reason' => Horde_Auth::REASON_MESSAGE,
+            ]);
             $registry->clearAuth();
             $logout_url->redirect();
         }
@@ -280,15 +291,15 @@ class Passwd_Basic
             if (is_array($backend['preferred'])) {
                 foreach ($backend['preferred'] as $backend) {
                     if (
-                        $backend == $_SERVER['SERVER_NAME'] ||
-                        $backend == $_SERVER['HTTP_HOST']
+                        $backend == $_SERVER['SERVER_NAME']
+                        || $backend == $_SERVER['HTTP_HOST']
                     ) {
                         return true;
                     }
                 }
             } elseif (
-                $backend['preferred'] == $_SERVER['SERVER_NAME'] ||
-                $backend['preferred'] == $_SERVER['HTTP_HOST']
+                $backend['preferred'] == $_SERVER['SERVER_NAME']
+                || $backend['preferred'] == $_SERVER['HTTP_HOST']
             ) {
                 return true;
             }

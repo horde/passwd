@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2002-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2002-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (GPL). If you
  * did not receive this file, see http://www.horde.org/licenses/gpl.
@@ -27,14 +27,14 @@ class Passwd_Driver_Vmailmgr extends Passwd_Driver
      */
     protected function _changePassword($user, $oldpass, $newpass)
     {
-        if (isset($this->_params['vmailinc']) &&
-            is_readable($this->_params['vmailinc'])) {
+        if (isset($this->_params['vmailinc'])
+            && is_readable($this->_params['vmailinc'])) {
             include $this->_params['vmailinc'];
         } else {
             throw new Passwd_Exception('vmail.inc not found! (' . $this->_params['vmailinc'] . ')');
         }
 
-        list($user, $domain) = explode('@', $user);
+        [$user, $domain] = explode('@', $user);
         $res = vchpass($domain, $oldpass, $user, $newpass);
 
         if ($res[0]) {
