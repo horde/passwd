@@ -1,106 +1,4 @@
 ---
-6.0.0-beta1:
-  api: 6.0.0-beta1
-  state:
-    release: beta
-    api: beta
-  date: 2026-03-28
-  license:
-    identifier: GPL-2.0-only
-    uri: https://spdx.org/licenses/GPL-2.0-only.html
-  notes: |-
-    fix: Use extension_loaded check as loadExtension is a removed PHP5 feature
-    refactor(routes): migrate to builder pattern with smartmobile BC
-    fix: Double encoding of URL
-    Merge pull request #6 from horde/feat/responsive-mobile-first
-    feat: Show app specific icon in mobile/responsive mode
-    Merge pull request #5 from horde/feat/responsive-mobile-first
-    feat(passwd): add smartmobile/responsive scaffolding
-    fix: Shield against passing null values to horde/view components
-    chore: Update gitignore file
-6.0.0-alpha4:
-  api: 6.0.0-alpha1
-  state:
-    release: alpha
-    api: alpha
-  date: 2025-06-04
-  license:
-    identifier: GPL-2.0-only
-    uri: http://www.horde.org/licenses/gpl
-  notes: |
-    style: apply php-cs-fixer php8.3+ rules
-    chore: Use classmap for lib/ PSR0ish classes
-    feat: Add stub of custom config form
-    fix: Add conditional to hook class template to prevent double declaration issues
-6.0.0-alpha3:
-  api: 6.0.0alpha1
-  state:
-    release: alpha
-    api: alpha
-  date: 2022-11-03
-  license:
-    identifier: GPL-2.0
-    uri: http://www.horde.org/licenses/gpl
-  notes: |
-    Original version string was 6.0.0alpha3
-    [rla] Enable PHP 8.x compat.
-    |+
-6.0.0-alpha2:
-  api: 6.0.0alpha1
-  state:
-    release: alpha
-    api: alpha
-  date: 2021-03-15
-  license:
-    identifier: GPL-2.0
-    uri: http://www.horde.org/licenses/gpl
-  notes: |-
-    Original version string was 6.0.0alpha2
-    |+
-6.0.0-alpha1:
-  api: 6.0.0alpha1
-  state:
-    release: beta
-    api: beta
-  date: 2021-02-24
-  license:
-    identifier: GPL-2.0
-    uri: http://www.horde.org/licenses/gpl
-  notes: |
-    Original version string was 6.0.0alpha1
-    [rla] Initial composer plugin based release
-6.0.0-RC2:
-  api: 6.0.0-RC2
-  state:
-    release: RC
-    api: RC
-  date: 2026-05-25
-  license:
-    identifier: GPL-2.0-only
-    uri: https://spdx.org/licenses/GPL-2.0-only.html
-  notes: |-
-    docs: add Lucide Icons license notice
-    refactor(responsive): use ResponsiveChromeRenderer, consolidate CSS
-    fix(themes): add screen.css stub for theme discovery
-    chore: Update workflow dependency
-6.0.0-RC1:
-  api: 6.0.0-RC1
-  state:
-    release: RC
-    api: RC
-  date: 2026-05-19
-  license:
-    identifier: GPL-2.0-only
-    uri: https://spdx.org/licenses/GPL-2.0-only.html
-  notes: |-
-    style: Update passwd icon
-    refactor: Explicitly declare the default stack as a prestep to removing fallback logic
-    refactor(registry): Evolve to a format more independent of legacy stack
-    feat: Add a template conf.php
-    refactor: Turn prototypejs-heavy javascript into vanilla javascript
-    docs: Clarify where to put local overrides
-    chore: it was good while it lasted
-    fix: Support both old-style Horde_Variables and modern Horde\Util\Variables
 6.0.0:
   api: 6.0.0
   state:
@@ -110,8 +8,87 @@
   license:
     identifier: GPL-2.0
     uri: http://www.horde.org/licenses/gpl
-  notes: |
-    [jan] Add ISPConfig driver (Thomas Basler <thomas@familie-basler.net>).
+  notes: "[jan] Add ISPConfig driver (Thomas Basler <thomas@familie-basler.net>).\n"
+6.0.0-RC3:
+  api: 6.0.0-RC3
+  state:
+    release: RC
+    api: RC
+  date: 2026-06-30
+  license:
+    identifier: GPL-2.0-only
+    uri: https://spdx.org/licenses/GPL-2.0-only.html
+  notes: "style: apply horde-components qc --fix-qc-issues sweep\nfix(driver/pine): parenthesize nested ternaries for PHP 8 compatibility"
+6.0.0-RC2:
+  api: 6.0.0-RC2
+  state:
+    release: RC
+    api: RC
+  date: 2026-05-25
+  license:
+    identifier: GPL-2.0-only
+    uri: https://spdx.org/licenses/GPL-2.0-only.html
+  notes: "docs: add Lucide Icons license notice\nrefactor(responsive): use ResponsiveChromeRenderer, consolidate CSS\nfix(themes): add screen.css stub for theme discovery\nchore: Update workflow dependency"
+6.0.0-RC1:
+  api: 6.0.0-RC1
+  state:
+    release: RC
+    api: RC
+  date: 2026-05-19
+  license:
+    identifier: GPL-2.0-only
+    uri: https://spdx.org/licenses/GPL-2.0-only.html
+  notes: "style: Update passwd icon\nrefactor: Explicitly declare the default stack as a prestep to removing fallback logic\nrefactor(registry): Evolve to a format more independent of legacy stack\nfeat: Add a template conf.php\nrefactor: Turn prototypejs-heavy javascript into vanilla javascript\ndocs: Clarify where to put local overrides\nchore: it was good while it lasted\nfix: Support both old-style Horde_Variables and modern Horde\\Util\\Variables"
+6.0.0-beta1:
+  api: 6.0.0-beta1
+  state:
+    release: beta
+    api: beta
+  date: 2026-03-28
+  license:
+    identifier: GPL-2.0-only
+    uri: https://spdx.org/licenses/GPL-2.0-only.html
+  notes: "fix: Use extension_loaded check as loadExtension is a removed PHP5 feature\nrefactor(routes): migrate to builder pattern with smartmobile BC\nfix: Double encoding of URL\nMerge pull request #6 from horde/feat/responsive-mobile-first\nfeat: Show app specific icon in mobile/responsive mode\nMerge pull request #5 from horde/feat/responsive-mobile-first\nfeat(passwd): add smartmobile/responsive scaffolding\nfix: Shield against passing null values to horde/view components\nchore: Update gitignore file"
+6.0.0-alpha4:
+  api: 6.0.0-alpha1
+  state:
+    release: alpha
+    api: alpha
+  date: 2025-06-04
+  license:
+    identifier: GPL-2.0-only
+    uri: http://www.horde.org/licenses/gpl
+  notes: "style: apply php-cs-fixer php8.3+ rules\nchore: Use classmap for lib/ PSR0ish classes\nfeat: Add stub of custom config form\nfix: Add conditional to hook class template to prevent double declaration issues\n"
+6.0.0-alpha3:
+  api: 6.0.0alpha1
+  state:
+    release: alpha
+    api: alpha
+  date: 2022-11-03
+  license:
+    identifier: GPL-2.0
+    uri: http://www.horde.org/licenses/gpl
+  notes: "Original version string was 6.0.0alpha3\n[rla] Enable PHP 8.x compat.\n|+\n"
+6.0.0-alpha2:
+  api: 6.0.0alpha1
+  state:
+    release: alpha
+    api: alpha
+  date: 2021-03-15
+  license:
+    identifier: GPL-2.0
+    uri: http://www.horde.org/licenses/gpl
+  notes: "Original version string was 6.0.0alpha2\n|+"
+6.0.0-alpha1:
+  api: 6.0.0alpha1
+  state:
+    release: beta
+    api: beta
+  date: 2021-02-24
+  license:
+    identifier: GPL-2.0
+    uri: http://www.horde.org/licenses/gpl
+  notes: "Original version string was 6.0.0alpha1\n[rla] Initial composer plugin based release\n"
 5.0.8:
   api: 5.0.0
   state:
@@ -121,8 +98,7 @@
   license:
     identifier: GPL-2.0
     uri: http://www.horde.org/licenses/gpl
-  notes: |
-    [jan] Add CSRF protection  (Midah Pasche <midahannep@gmail.com>, PR #1).
+  notes: "[jan] Add CSRF protection  (Midah Pasche <midahannep@gmail.com>, PR #1).\n"
 5.0.7:
   api: 5.0.0
   state:
@@ -132,9 +108,7 @@
   license:
     identifier: GPL-2.0
     uri: http://www.horde.org/licenses/gpl
-  notes: |
-    [jan] SECURITY: Fix open redirects.
-    [jan] Officially support PHP 7.
+  notes: "[jan] SECURITY: Fix open redirects.\n[jan] Officially support PHP 7.\n"
 5.0.6:
   api: 5.0.0
   state:
@@ -144,8 +118,7 @@
   license:
     identifier: GPL-2.0
     uri: http://www.horde.org/licenses/gpl
-  notes: |
-    [jan] Update German translation.
+  notes: "[jan] Update German translation.\n"
 5.0.5:
   api: 5.0.0
   state:
@@ -155,11 +128,7 @@
   license:
     identifier: GPL-2.0
     uri: http://www.horde.org/licenses/gpl
-  notes: |
-    [jan] Update German translation.
-    [jan] Update Portuguese translation.
-    [jan] Fix changing passwords with the SOAP driver.
-    [jan] Use access rules compatible with both Apache 2.2 and 2.4.
+  notes: "[jan] Update German translation.\n[jan] Update Portuguese translation.\n[jan] Fix changing passwords with the SOAP driver.\n[jan] Use access rules compatible with both Apache 2.2 and 2.4.\n"
 5.0.4:
   api: 5.0.0
   state:
@@ -169,8 +138,7 @@
   license:
     identifier: GPL-2.0
     uri: http://www.horde.org/licenses/gpl
-  notes: |
-    [mjr] Fix changing password using Kolab driver (Mike Gabriel <mike.gabriel@das-netzwerkteam.de>).
+  notes: "[mjr] Fix changing password using Kolab driver (Mike Gabriel <mike.gabriel@das-netzwerkteam.de>).\n"
 5.0.3:
   api: 5.0.0
   state:
@@ -180,13 +148,7 @@
   license:
     identifier: GPL-2.0
     uri: http://www.horde.org/licenses/gpl
-  notes: |
-    [jan] Update Italian translation.
-    [jan] Update Galician translation.
-    [jan] Update Catalan translation.
-    [jan] Update German translation.
-    [jan] Update Czech translation.
-    [jan] Update Brazilian Portuguese translation (Luis Felipe Marzagao <duli@easylifeproject.org>).
+  notes: "[jan] Update Italian translation.\n[jan] Update Galician translation.\n[jan] Update Catalan translation.\n[jan] Update German translation.\n[jan] Update Czech translation.\n[jan] Update Brazilian Portuguese translation (Luis Felipe Marzagao <duli@easylifeproject.org>).\n"
 5.0.2:
   api: 5.0.0
   state:
@@ -196,11 +158,7 @@
   license:
     identifier: GPL-2.0
     uri: http://www.horde.org/licenses/gpl
-  notes: |
-    [jan] Fix syntax error in HTTP driver (Bug #13464).
-    [mms] Re-add 'userdn' hook.
-    [jan] Update Danish translation (Erling Preben Hansen <erling@eph.dk>).
-    [mms] Fix usage of 'query_lookup' and 'query_modify' backend parameters (Michael Cramer <michael@bigmichi1.de>).
+  notes: "[jan] Fix syntax error in HTTP driver (Bug #13464).\n[mms] Re-add 'userdn' hook.\n[jan] Update Danish translation (Erling Preben Hansen <erling@eph.dk>).\n[mms] Fix usage of 'query_lookup' and 'query_modify' backend parameters (Michael Cramer <michael@bigmichi1.de>).\n"
 5.0.1:
   api: 5.0.0
   state:
@@ -210,41 +168,7 @@
   license:
     identifier: GPL-2.0
     uri: http://www.horde.org/licenses/gpl
-  notes: |
-    [jan] Don't overwrite parameters for composite sub-drivers (Bug #12284).
-    [jan] Don't install expect scripts as executables.
-    [jan] Fix fatal error in Samba/LDAP driver (Bug #12319).
-    [jan] Fix user name parameter in LDAP driver (Bug #12331).
-5.0.0-beta1:
-  api: 5.0.0
-  state:
-    release: beta
-    api: stable
-  date: 2013-05-07
-  license:
-    identifier: GPL-2.0
-    uri: http://www.horde.org/licenses/gpl
-  notes: |
-    Original version string was 5.0.0beta1
-    [mms] Add option to destroy Horde session after changing password (Bug #11766).
-    [mms] Http driver now uses Horde_Http_Client.
-    [jan] Update French translation (Paul De Vlieger <paul.de_vlieger@moniut.univ-bpclermont.fr>).
-    [jan] Update Polish translation (Krzysztof Kozera <krzysztof113@o2.pl>).
-    [jan] Update Italian translation (Massimo Malabotta <mmalabotta@units.it>).
-    [jan] Fix preparing multiple backends (Bug #11023).
-5.0.0-RC1:
-  api: 5.0.0
-  state:
-    release: beta
-    api: stable
-  date: 2013-05-29
-  license:
-    identifier: GPL-2.0
-    uri: http://www.horde.org/licenses/gpl
-  notes: |
-    Original version string was 5.0.0RC1
-    [jan] Add policy for minimum number of non-alphanumeric characters (Friedrich Haubensak <hsk@fli-leibniz.de>, Request #12243).
-    [jan] Add parameter for sudo program name to expect script (Friedrich Haubensak <hsk@fli-leibniz.de>, Request #12243).
+  notes: "[jan] Don't overwrite parameters for composite sub-drivers (Bug #12284).\n[jan] Don't install expect scripts as executables.\n[jan] Fix fatal error in Samba/LDAP driver (Bug #12319).\n[jan] Fix user name parameter in LDAP driver (Bug #12331).\n"
 5.0.0:
   api: 5.0.0
   state:
@@ -254,8 +178,27 @@
   license:
     identifier: GPL-2.0
     uri: http://www.horde.org/licenses/gpl
-  notes: |
-    Final release.
+  notes: "Final release.\n"
+5.0.0-RC1:
+  api: 5.0.0
+  state:
+    release: beta
+    api: stable
+  date: 2013-05-29
+  license:
+    identifier: GPL-2.0
+    uri: http://www.horde.org/licenses/gpl
+  notes: "Original version string was 5.0.0RC1\n[jan] Add policy for minimum number of non-alphanumeric characters (Friedrich Haubensak <hsk@fli-leibniz.de>, Request #12243).\n[jan] Add parameter for sudo program name to expect script (Friedrich Haubensak <hsk@fli-leibniz.de>, Request #12243).\n"
+5.0.0-beta1:
+  api: 5.0.0
+  state:
+    release: beta
+    api: stable
+  date: 2013-05-07
+  license:
+    identifier: GPL-2.0
+    uri: http://www.horde.org/licenses/gpl
+  notes: "Original version string was 5.0.0beta1\n[mms] Add option to destroy Horde session after changing password (Bug #11766).\n[mms] Http driver now uses Horde_Http_Client.\n[jan] Update French translation (Paul De Vlieger <paul.de_vlieger@moniut.univ-bpclermont.fr>).\n[jan] Update Polish translation (Krzysztof Kozera <krzysztof113@o2.pl>).\n[jan] Update Italian translation (Massimo Malabotta <mmalabotta@units.it>).\n[jan] Fix preparing multiple backends (Bug #11023).\n"
 4.0.1:
   api: 4.0.0
   state:
@@ -265,38 +208,7 @@
   license:
     identifier: GPL-2.0
     uri: http://www.horde.org/licenses/gpl
-  notes: |
-    [rla] Don't pass too many parameters from backends.php to Horde_Db (Bug #10963).
-    [jan] Make expect driver locale independent (Bug #9166).
-    [jan] Update Japanese translation (Hiromi Kimura <hiromi@tac.tsukuba.ac.jp>).
-4.0.0-alpha1:
-  api: 4.0.0alpha1
-  state:
-    release: alpha
-    api: alpha
-  date: 2011-09-28
-  license:
-    identifier: GPL-2.0
-    uri: http://www.horde.org/licenses/gpl
-  notes: |
-    Original version string was 4.0.0alpha1
-    First alpha release for Horde 4.
-    [jan] Add Latvian translation (Jānis Eisaks <jancs@dv.lv>).
-    [rla] Added new driver 'horde' which uses the update() function of horde's authentication driver.
-    [jan] Provide default configuration files instead of .dist versions.
-    [jan] Fix creating temporary files with open_basedir restrictions.
-4.0.0-RC1:
-  api: 4.0.0RC1
-  state:
-    release: beta
-    api: beta
-  date: 2011-10-28
-  license:
-    identifier: GPL-2.0
-    uri: http://www.horde.org/licenses/gpl
-  notes: |
-    Original version string was 4.0.0RC1
-    [bak] Fix lookup of user entry in LDAP driver.
+  notes: "[rla] Don't pass too many parameters from backends.php to Horde_Db (Bug #10963).\n[jan] Make expect driver locale independent (Bug #9166).\n[jan] Update Japanese translation (Hiromi Kimura <hiromi@tac.tsukuba.ac.jp>).\n"
 4.0.0:
   api: 4.0.0
   state:
@@ -306,167 +218,60 @@
   license:
     identifier: GPL-2.0
     uri: http://www.horde.org/licenses/gpl
-  notes: |
-    First stable release for Horde 4.
+  notes: "First stable release for Horde 4.\n"
+4.0.0-RC1:
+  api: 4.0.0RC1
+  state:
+    release: beta
+    api: beta
+  date: 2011-10-28
+  license:
+    identifier: GPL-2.0
+    uri: http://www.horde.org/licenses/gpl
+  notes: "Original version string was 4.0.0RC1\n[bak] Fix lookup of user entry in LDAP driver.\n"
+4.0.0-alpha1:
+  api: 4.0.0alpha1
+  state:
+    release: alpha
+    api: alpha
+  date: 2011-09-28
+  license:
+    identifier: GPL-2.0
+    uri: http://www.horde.org/licenses/gpl
+  notes: "Original version string was 4.0.0alpha1\nFirst alpha release for Horde 4.\n[jan] Add Latvian translation (Jānis Eisaks <jancs@dv.lv>).\n[rla] Added new driver 'horde' which uses the update() function of horde's authentication driver.\n[jan] Provide default configuration files instead of .dist versions.\n[jan] Fix creating temporary files with open_basedir restrictions.\n"
 3.1.3:
-  notes: |
-    [jan] Fix examples using 'minSymbols' instead of 'minSymbol' (Bug #8854).
-    [jan] Fix PHP error when changing passwords with LDAP driver (Bug #8686).
+  notes: "[jan] Fix examples using 'minSymbols' instead of 'minSymbol' (Bug #8854).\n[jan] Fix PHP error when changing passwords with LDAP driver (Bug #8686).\n"
 3.1.2:
-  notes: |
-    [jan] Enable output compression (horde@albasoft.com, Bug #8649).
-    [jan] Add Croatian translation (Valentin Vidic <valentin.vidic@carnet.hr>).
-    [jan] Add option to configure referrals for LDAP driver (manilal@ejyothi.com, Request #8582).
-    [jan] Simplify and fix smbldap driver (Bug #8192).
+  notes: "[jan] Enable output compression (horde@albasoft.com, Bug #8649).\n[jan] Add Croatian translation (Valentin Vidic <valentin.vidic@carnet.hr>).\n[jan] Add option to configure referrals for LDAP driver (manilal@ejyothi.com, Request #8582).\n[jan] Simplify and fix smbldap driver (Bug #8192).\n"
 3.1.1:
-  notes: |
-    [cjh] SECURITY: Fix XSS when specifying an invalid backend key (security@davidwharton.us, #8398).
-    [jan] Add hook that's called after successfully changing the password.
-    [jan] Add SOAP driver.
-    [jan] Add example configuration for Postfix Admin (Michael Brennen <michael@fishnet.us>).
-    [jan] Fix binding to LDAP server if using the userdn hook.
-3.1.0-RC2:
-  notes: |
-    Original version string was 3.1-RC2
-    [cjh] Don't include the old password in LDAP driver error messages (Joffrey van Wageningen <joffrey-horde@coolhaven.info>).
-3.1.0-RC1:
-  notes: |
-    Original version string was 3.1-RC1
-    [cjh] Add missing enforcement of minSymbol password policy (yann@pleiades.fr.eu.org, Bug #7260).
-    [cjh] Only update smbldap attributes for Samba users, and update all attributes at once instead of one at a time (marco@csita.unige.it, Request #5977).
-    [cjh] Don't set smbldap attributes that are commented out in the config (fabio.pedretti@ing.unibs.it, Request #5937).
-    [jan] Move all Passwd-specific hook examples from Horde's config/ directory.
-    [cjh] Add support for switching between encryption schemes (ulrich-horde@topfen.net, Request #2865).
-    [jan] Add support for sudo to the example expect script (Dennis Voetelink <voetelink@ecn.nl>, Request #5300).
-    [mas] Conform to WCAG 1.0 Priority 2/Section 508 accessibility guidelines. (Request #4080)
-    [jan] Add new expect driver that uses the expect PECL PHP extension (Duck <duck@obala.net>).
-    [mjr] Add new http driver for changing passwords via an existing web form.
-    [mjr] Pass reference to driver to the _passwd_hook_username call.
-    [jan] Add Turkish translation (METU <horde-tr@metu.edu.tr>).
+  notes: "[cjh] SECURITY: Fix XSS when specifying an invalid backend key (security@davidwharton.us, #8398).\n[jan] Add hook that's called after successfully changing the password.\n[jan] Add SOAP driver.\n[jan] Add example configuration for Postfix Admin (Michael Brennen <michael@fishnet.us>).\n[jan] Fix binding to LDAP server if using the userdn hook.\n"
 3.1.0:
-  notes: |
-    Original version string was 3.1
-    [cjh] Fix bad mode for STDERR in the procopen driver (info@opensolutions.net, Bug #8022).
+  notes: "Original version string was 3.1\n[cjh] Fix bad mode for STDERR in the procopen driver (info@opensolutions.net, Bug #8022).\n"
+3.1.0-RC2:
+  notes: "Original version string was 3.1-RC2\n[cjh] Don't include the old password in LDAP driver error messages (Joffrey van Wageningen <joffrey-horde@coolhaven.info>).\n"
+3.1.0-RC1:
+  notes: "Original version string was 3.1-RC1\n[cjh] Add missing enforcement of minSymbol password policy (yann@pleiades.fr.eu.org, Bug #7260).\n[cjh] Only update smbldap attributes for Samba users, and update all attributes at once instead of one at a time (marco@csita.unige.it, Request #5977).\n[cjh] Don't set smbldap attributes that are commented out in the config (fabio.pedretti@ing.unibs.it, Request #5937).\n[jan] Move all Passwd-specific hook examples from Horde's config/ directory.\n[cjh] Add support for switching between encryption schemes (ulrich-horde@topfen.net, Request #2865).\n[jan] Add support for sudo to the example expect script (Dennis Voetelink <voetelink@ecn.nl>, Request #5300).\n[mas] Conform to WCAG 1.0 Priority 2/Section 508 accessibility guidelines. (Request #4080)\n[jan] Add new expect driver that uses the expect PECL PHP extension (Duck <duck@obala.net>).\n[mjr] Add new http driver for changing passwords via an existing web form.\n[mjr] Pass reference to driver to the _passwd_hook_username call.\n[jan] Add Turkish translation (METU <horde-tr@metu.edu.tr>).\n"
 3.0.1:
-  notes: |
-    [jan] Add placeholders for domain and username parts to SQL driver queries (Vilius Sumskas <vilius@lnk.lt>, Request #4985).
-    [jan] Improve error checking in poppassd driver (Bug #4505, horde@koornneef.net).
-    [jan] Add Slovenian translation (Duck <duck@obala.net>).
-    [jan] Compare hashing algorithms in passwords case insensitively (andreas@altroot.de, Bug #2708).
-    [jan] Allow password changing for special Kolab users (mzizka@hotmail.com, Request #4128).
-    [jan] Add Japanese translation (Hiromi Kimura <hiromi@tac.tsukuba.ac.jp>).
-    [ben] Better support for MS-SQL
-    [cjh] Add support in the expect driver for rssh, scponly, and other programs that can execute certain commands over ssh without providing a prompt (Request #2887).
-3.0.0-RC1:
-  notes: |
-    Original version string was 3.0-RC1
-    [jan] Extend the expect script to allow setups with passwd as the login shell (Request #2550, Lionel Elie Mamane <lmamane@debian.org>).
-    [jan] Don't bind to LDAP anonymously if binding with userdn fails (Bug #2502).
-    [cjh] Fix updating shadowlastchange attribute in ldap driver (Roel Gloudemans <roel@gloudemans.info>).
-    [jan] Extend the smbldap driver from the ldap driver to support all parameters of the ldap driver (Request #2499).
-3.0.0-BETA1:
-  notes: |
-    Original version string was 3.0-BETA
-    [cjh] Use Crypt_CHAP to generate smbldap passwords (Bug #1223).
-    [stb] Add Kolab driver.
-    [cjh] Allow using admin credentials in the LDAP driver (Bug #1409).
-    [cjh] Use bind variables in SQL drivers (selsky@columbia.edu, Bug #1718).
-    [cjh] Allow the list of refused usernames to be empty (Bug #1544).
-    [cjh] If $conf['user']['change'] is false, don't trust form input for the userid.
-    [jan] Add Catalan translation (Joan Jorba Calsina <joan.jorba@rusc.net>).
-    [cjh] Add ADSI and PSPASSWD windows password drivers (LRM <lrm@ionline.com.br>).
-    [jan] Add Persian (Western) translation (Vahid Ghafarpour <vahid@ghafarpour.com>).
-    [jan] Add shadowLastChange and shadowMin configuration items to LDAP driver (Roel Gloudemans <roel@gloudemans.info>).
-    [cjh] Add proc_open() driver (Samuel Nicolary <sam@nicolary.org>).
-    [cjh] Add an SMB LDAP driver (Shane Boulter <sboulter@ariasolutions.com>).
-    [cjh] Add SSL support to the LDAP driver (LRM <lrm@ionline.com.br>).
-    [max] Add minSymbols and minClasses password policies.  See comments in config/backends.php.dist for more information.
-    [max] Add optional 'required' parameters to composite driver's subdriver configurations.
-    [max] Add optional parameter 'no_reset' to the backend configs which prevents reseting the authenticated user's credentials on password changes.
-    [max] Properly reset authenticated user's credentials.
-    [cjh] Use password encryption that's now implemented in the Auth:: package.
-    [max] Add pine driver which changes a pine-encoded file using FTP.
-    [max] Fix password checking when encryption requires a random salt.
-    [max] Add composite driver which will replace all the groups stuff.
-    [max] Add support for backend groups to allow syncing of multiple backends.
-    [max] Add query_lookup and query_modify parameters to the sql driver.
-    [ejr] Add tls support for ldap driver.
-    [ejr] Fix error reporting in poppassd driver.
-    [ejr] Add binddn hook submitted by Amith Varghese <amith@xalan.com>.
-    [ejr] make sure oldpassword == horde_login_password before changing horde cached password.
-    [ejr] Fix md5 (md5-hex and md5-base64) encryption for ldap/sql (Amith Varghese <amith@xalan.com>).
-    [mc]  Move templates to horde style directory layout, getName() -> getParam().
-    [ejr] Implemented new CVS HEAD themes.
-    [ejr] Updated to new CVS HEAD notification system.
+  notes: "[jan] Add placeholders for domain and username parts to SQL driver queries (Vilius Sumskas <vilius@lnk.lt>, Request #4985).\n[jan] Improve error checking in poppassd driver (Bug #4505, horde@koornneef.net).\n[jan] Add Slovenian translation (Duck <duck@obala.net>).\n[jan] Compare hashing algorithms in passwords case insensitively (andreas@altroot.de, Bug #2708).\n[jan] Allow password changing for special Kolab users (mzizka@hotmail.com, Request #4128).\n[jan] Add Japanese translation (Hiromi Kimura <hiromi@tac.tsukuba.ac.jp>).\n[ben] Better support for MS-SQL\n[cjh] Add support in the expect driver for rssh, scponly, and other programs that can execute certain commands over ssh without providing a prompt (Request #2887).\n"
 3.0.0:
-  notes: |
-    Original version string was 3.0
-    [jan] Add configuration option to switch between using user names with and without realms.
-    [jan] Add Slovak translation (Ivan Noris <vix@vazka.sk>).
+  notes: "Original version string was 3.0\n[jan] Add configuration option to switch between using user names with and without realms.\n[jan] Add Slovak translation (Ivan Noris <vix@vazka.sk>).\n"
+3.0.0-RC1:
+  notes: "Original version string was 3.0-RC1\n[jan] Extend the expect script to allow setups with passwd as the login shell (Request #2550, Lionel Elie Mamane <lmamane@debian.org>).\n[jan] Don't bind to LDAP anonymously if binding with userdn fails (Bug #2502).\n[cjh] Fix updating shadowlastchange attribute in ldap driver (Roel Gloudemans <roel@gloudemans.info>).\n[jan] Extend the smbldap driver from the ldap driver to support all parameters of the ldap driver (Request #2499).\n"
+3.0.0-BETA1:
+  notes: "Original version string was 3.0-BETA\n[cjh] Use Crypt_CHAP to generate smbldap passwords (Bug #1223).\n[stb] Add Kolab driver.\n[cjh] Allow using admin credentials in the LDAP driver (Bug #1409).\n[cjh] Use bind variables in SQL drivers (selsky@columbia.edu, Bug #1718).\n[cjh] Allow the list of refused usernames to be empty (Bug #1544).\n[cjh] If $conf['user']['change'] is false, don't trust form input for the userid.\n[jan] Add Catalan translation (Joan Jorba Calsina <joan.jorba@rusc.net>).\n[cjh] Add ADSI and PSPASSWD windows password drivers (LRM <lrm@ionline.com.br>).\n[jan] Add Persian (Western) translation (Vahid Ghafarpour <vahid@ghafarpour.com>).\n[jan] Add shadowLastChange and shadowMin configuration items to LDAP driver (Roel Gloudemans <roel@gloudemans.info>).\n[cjh] Add proc_open() driver (Samuel Nicolary <sam@nicolary.org>).\n[cjh] Add an SMB LDAP driver (Shane Boulter <sboulter@ariasolutions.com>).\n[cjh] Add SSL support to the LDAP driver (LRM <lrm@ionline.com.br>).\n[max] Add minSymbols and minClasses password policies.  See comments in config/backends.php.dist for more information.\n[max] Add optional 'required' parameters to composite driver's subdriver configurations.\n[max] Add optional parameter 'no_reset' to the backend configs which prevents reseting the authenticated user's credentials on password changes.\n[max] Properly reset authenticated user's credentials.\n[cjh] Use password encryption that's now implemented in the Auth:: package.\n[max] Add pine driver which changes a pine-encoded file using FTP.\n[max] Fix password checking when encryption requires a random salt.\n[max] Add composite driver which will replace all the groups stuff.\n[max] Add support for backend groups to allow syncing of multiple backends.\n[max] Add query_lookup and query_modify parameters to the sql driver.\n[ejr] Add tls support for ldap driver.\n[ejr] Fix error reporting in poppassd driver.\n[ejr] Add binddn hook submitted by Amith Varghese <amith@xalan.com>.\n[ejr] make sure oldpassword == horde_login_password before changing horde cached password.\n[ejr] Fix md5 (md5-hex and md5-base64) encryption for ldap/sql (Amith Varghese <amith@xalan.com>).\n[mc]  Move templates to horde style directory layout, getName() -> getParam().\n[ejr] Implemented new CVS HEAD themes.\n[ejr] Updated to new CVS HEAD notification system.\n"
 2.2.2:
-  notes: |
-    [jan] Close XSS when setting the parent frame's page title by javascript (cjh).
-    [ejr] Configuration item for showing/changing username in the form.
-    [jan] Allow to set the protocol version in the LDAP driver (ben@alkaloid.net).
-    [cjh] Add crypt-blowfish and crypt-md5 encryption types. Also add crypt-des for completion which is just an alias for crypt (max).
-    [jan] Add Estonian translation (Toomas Aas <toomas.aas@raad.tartu.ee>).
-2.2.1-RC1:
-  notes: |
-    [jan] Add Indonesian language (Slamin <slamin@unej.ac.id>).
-    [jan] Add Galician translation (Rafael Varela Pet <srrafa@usc.es>, Guillermo Mendez <guille@usc.es>).
-    [jan] Add Danish translation (Anders Bruun Olsen <anders@bruun-olsen.net>).
-    [jan] Add Arabic (Syria) translation (Platinum Development Team <devteam@platinum-sy.net>).
-    [jan] Add Hungarian translation (Szabo Gyula <gyufi@sztaki.hu>).
-    [jan] Add Romanian translation (Eugen Hoanca <eugenh@urban-grafx.ro>, Marius Dragulescu <mariusd@urban-grafx.ro>).
-    [jan] Add Lithuanian translation (Vilius Sumskas <vilius@lnk.lt>).
-    [ejr] Fix BC breaks in vpopmail and sql drivers.
+  notes: "[jan] Close XSS when setting the parent frame's page title by javascript (cjh).\n[ejr] Configuration item for showing/changing username in the form.\n[jan] Allow to set the protocol version in the LDAP driver (ben@alkaloid.net).\n[cjh] Add crypt-blowfish and crypt-md5 encryption types. Also add crypt-des for completion which is just an alias for crypt (max).\n[jan] Add Estonian translation (Toomas Aas <toomas.aas@raad.tartu.ee>).\n"
 2.2.1:
-  notes: |
-    [jan] Bug #40: Fix smbpasswd driver with non-bash shells (Christopher Huyler <chris@huyler.net>).
-    [jan] Add Simplified Chinese translation (Zhang Bo <boozhang@sdb.ac.cn>).
-2.2.0-RC2:
-  notes: |
-    Original version string was 2.2-RC2
-    [ejr] Fix missing path for expect binary.
-    [ejr] Add missing scripts/ directory and missing expect script.
-    [ejr] Fix error reporting in expect driver (j.huinink@wanadoo.nl).
-    [ejr] Remove old realm code that was previously missed.
-    [ejr] Port servuftp driver to new backends.conf format.
-    [ejr] Return actual error message text in poppassd driver (submitted by Leena Heino <Leena.Heino@uta.fi>).
-    [ejr] Change is_a(*, 'PEAR_Error') calls to PEAR::isError() calls for php bc.
-2.2.0-RC1:
-  notes: |
-    Original version string was 2.2-RC1
-    [ejr] Add vpopmail driver (Anton Nekhoroshikh <anton@valuehost.ru>).
-    [mac] Add vmailmgr driver (Marco Kaiser <bate@php.net>).
-    [ejr] Add expect script (Gaudenz Steinlin).
-    [ejr] Change ldap code to do self-password changes, add phpdoc.
-    [ejr] Update ldap driver (Tjeerd van der Zee).
-    [ejr] Reset Horde/IMP cached credentials when changing password.
-    [ejr] Add username hooks (mac).
-    [ejr] Rewrite driver system, add backends.conf system (mc).
-    [jan] Add Italian translation (Fichera Gianrico <gianrico.fichera@itesys.it>).
-    [cjh] Close several small XSS vulnerabilities (Mitja Kolsek <mitja.kolsek@acros.si>).
+  notes: "[jan] Bug #40: Fix smbpasswd driver with non-bash shells (Christopher Huyler <chris@huyler.net>).\n[jan] Add Simplified Chinese translation (Zhang Bo <boozhang@sdb.ac.cn>).\n"
+2.2.1-RC1:
+  notes: "[jan] Add Indonesian language (Slamin <slamin@unej.ac.id>).\n[jan] Add Galician translation (Rafael Varela Pet <srrafa@usc.es>, Guillermo Mendez <guille@usc.es>).\n[jan] Add Danish translation (Anders Bruun Olsen <anders@bruun-olsen.net>).\n[jan] Add Arabic (Syria) translation (Platinum Development Team <devteam@platinum-sy.net>).\n[jan] Add Hungarian translation (Szabo Gyula <gyufi@sztaki.hu>).\n[jan] Add Romanian translation (Eugen Hoanca <eugenh@urban-grafx.ro>, Marius Dragulescu <mariusd@urban-grafx.ro>).\n[jan] Add Lithuanian translation (Vilius Sumskas <vilius@lnk.lt>).\n[ejr] Fix BC breaks in vpopmail and sql drivers.\n"
 2.2.0:
-  notes: |
-    Original version string was 2.2
-    [ejr] Allow bc for php versions that don't have the ctype extension.
+  notes: "Original version string was 2.2\n[ejr] Allow bc for php versions that don't have the ctype extension.\n"
+2.2.0-RC2:
+  notes: "Original version string was 2.2-RC2\n[ejr] Fix missing path for expect binary.\n[ejr] Add missing scripts/ directory and missing expect script.\n[ejr] Fix error reporting in expect driver (j.huinink@wanadoo.nl).\n[ejr] Remove old realm code that was previously missed.\n[ejr] Port servuftp driver to new backends.conf format.\n[ejr] Return actual error message text in poppassd driver (submitted by Leena Heino <Leena.Heino@uta.fi>).\n[ejr] Change is_a(*, 'PEAR_Error') calls to PEAR::isError() calls for php bc.\n"
+2.2.0-RC1:
+  notes: "Original version string was 2.2-RC1\n[ejr] Add vpopmail driver (Anton Nekhoroshikh <anton@valuehost.ru>).\n[mac] Add vmailmgr driver (Marco Kaiser <bate@php.net>).\n[ejr] Add expect script (Gaudenz Steinlin).\n[ejr] Change ldap code to do self-password changes, add phpdoc.\n[ejr] Update ldap driver (Tjeerd van der Zee).\n[ejr] Reset Horde/IMP cached credentials when changing password.\n[ejr] Add username hooks (mac).\n[ejr] Rewrite driver system, add backends.conf system (mc).\n[jan] Add Italian translation (Fichera Gianrico <gianrico.fichera@itesys.it>).\n[cjh] Close several small XSS vulnerabilities (Mitja Kolsek <mitja.kolsek@acros.si>).\n"
 2.1.0:
-  notes: |
-    Original version string was 2.1
-    [ejr] Add servuftp interface.
-    [ejr] Add exim sql backend.
-    [ejr] Add smbpasswd support.
-    [ejr] Move to driver driven system.
-    [mc]  Add javascript checks for form input.
-    [jan] Add Bulgarian translation (Miroslav Pendev <pendev@hotmail.com>).
+  notes: "Original version string was 2.1\n[ejr] Add servuftp interface.\n[ejr] Add exim sql backend.\n[ejr] Add smbpasswd support.\n[ejr] Move to driver driven system.\n[mc]  Add javascript checks for form input.\n[jan] Add Bulgarian translation (Miroslav Pendev <pendev@hotmail.com>).\n"
 2.0.0:
-  notes: |
-    Original version string was 2.0
-    [ejr] Added optional checks for password lengths and strength testing.
-    [ejr] Remove check for prefs.php in notconfigured.inc.
-    [ejr] Change from short-tag <?= to long format <?php echo.
-    [ejr] Fix spacing and look of Submit button.
-    [ejr] Update contact info in doc/INSTALL for mailing list.
-    [ejr] Added Norwegian (nn_NO) translation.
-    [ejr] Added Swedish (sv_SE) translation.
+  notes: "Original version string was 2.0\n[ejr] Added optional checks for password lengths and strength testing.\n[ejr] Remove check for prefs.php in notconfigured.inc.\n[ejr] Change from short-tag <?= to long format <?php echo.\n[ejr] Fix spacing and look of Submit button.\n[ejr] Update contact info in doc/INSTALL for mailing list.\n[ejr] Added Norwegian (nn_NO) translation.\n[ejr] Added Swedish (sv_SE) translation.\n"

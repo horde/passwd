@@ -20,7 +20,7 @@ authors:
     active: false
     role: lead
 version:
-  release: 6.0.0-RC2
+  release: 6.0.0-RC3
   api: 6.0.0alpha1
 state:
   release: RC
@@ -60,4 +60,115 @@ autoload:
   psr-4:
     Horde\Passwd\: /src
 vendor: horde
-keywords:
+keywords: null
+ci-platform:
+  '8.1':
+    - php: '>=7.2'
+    - composer-plugin-api: ^2.2.0
+    - ext-ctype
+    - ext-dom
+    - ext-filter
+    - ext-gettext
+    - ext-hash
+    - ext-iconv
+    - ext-intl
+    - ext-json
+    - ext-mbstring
+    - ext-openssl
+    - ext-pcre
+    - ext-session
+    - ext-simplexml
+    - ext-spl
+    - ext-xml
+  '8.2':
+    - php: '>=7.2'
+    - composer-plugin-api: ^2.2.0
+    - ext-ctype
+    - ext-dom
+    - ext-filter
+    - ext-gettext
+    - ext-hash
+    - ext-iconv
+    - ext-intl
+    - ext-json
+    - ext-mbstring
+    - ext-openssl
+    - ext-pcre
+    - ext-session
+    - ext-simplexml
+    - ext-spl
+    - ext-xml
+  '8.3':
+    - php: '>=7.2'
+    - composer-plugin-api: ^2.2.0
+    - ext-ctype
+    - ext-dom
+    - ext-filter
+    - ext-gettext
+    - ext-hash
+    - ext-iconv
+    - ext-intl
+    - ext-json
+    - ext-mbstring
+    - ext-openssl
+    - ext-pcre
+    - ext-session
+    - ext-simplexml
+    - ext-spl
+    - ext-xml
+  '8.4':
+    - php: '>=7.2'
+    - composer-plugin-api: ^2.2.0
+    - ext-ctype
+    - ext-dom
+    - ext-filter
+    - ext-gettext
+    - ext-hash
+    - ext-iconv
+    - ext-intl
+    - ext-json
+    - ext-mbstring
+    - ext-openssl
+    - ext-pcre
+    - ext-session
+    - ext-simplexml
+    - ext-spl
+    - ext-xml
+  '8.5':
+    - php: '>=7.2'
+    - composer-plugin-api: ^2.2.0
+    - ext-ctype
+    - ext-dom
+    - ext-filter
+    - ext-gettext
+    - ext-hash
+    - ext-iconv
+    - ext-intl
+    - ext-json
+    - ext-mbstring
+    - ext-openssl
+    - ext-pcre
+    - ext-session
+    - ext-simplexml
+    - ext-spl
+    - ext-xml
+  '8.6':
+    - php: '>=7.2'
+    - composer-plugin-api: ^2.2.0
+    - ext-ctype
+    - ext-dom
+    - ext-filter
+    - ext-gettext
+    - ext-hash
+    - ext-iconv
+    - ext-intl
+    - ext-json
+    - ext-mbstring
+    - ext-openssl
+    - ext-pcre
+    - ext-session
+    - ext-simplexml
+    - ext-spl
+    - ext-xml
+ci-platform-flags:
+  needs_installer_plugin: true
