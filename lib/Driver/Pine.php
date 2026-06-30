@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2003-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2003-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (GPL). If you
  * did not receive this file, see http://www.horde.org/licenses/gpl.
@@ -44,7 +44,7 @@ class Passwd_Driver_Pine extends Passwd_Driver
      *
      * @var array
      */
-    protected $_contents = array();
+    protected $_contents = [];
 
     /**
      * Horde_Vfs instance.
@@ -55,9 +55,9 @@ class Passwd_Driver_Pine extends Passwd_Driver
 
     /**
      */
-    public function __construct(array $params = array())
+    public function __construct(array $params = [])
     {
-        self::__construct(array_merge(array(
+        self::__construct(array_merge([
             /* We self-encrypt here, so plaintext is needed. */
             'encryption' => 'plain',
             'show_encryption' => false,
@@ -74,8 +74,8 @@ class Passwd_Driver_Pine extends Passwd_Driver
             'use_new_passwd' => false,
 
             /* What host to look for on each line? */
-            'imaphost' => 'localhost'
-        ), $params));
+            'imaphost' => 'localhost',
+        ], $params));
     }
 
     /**
@@ -89,12 +89,12 @@ class Passwd_Driver_Pine extends Passwd_Driver
             return;
         }
 
-        $params = array(
+        $params = [
             'username' => $user,
             'password' => $password,
             'hostspec' => $this->_params['host'],
             'port' => $this->_params['port'],
-        );
+        ];
 
         try {
             $this->_ftp = Horde_Vfs::factory('ftp', $params);
@@ -135,23 +135,23 @@ class Passwd_Driver_Pine extends Passwd_Driver
      */
     protected function _decode($string)
     {
-        $list = array();
+        $list = [];
 
         $lines = explode("\n", $string);
         for ($n = 0; $n < sizeof($lines); $n++) {
             $key = $n;
             $tmp = $lines[$n];
             for ($i = 0; $i < strlen($tmp); $i++) {
-                if ((ord($tmp[$i]) >= self::FIRSTCH) &&
-                    (ord($tmp[$i]) <= self::LASTCH)) {
+                if ((ord($tmp[$i]) >= self::FIRSTCH)
+                    && (ord($tmp[$i]) <= self::LASTCH)) {
                     $xch  = ord($tmp[$i]) - ($dti = $key);
                     $xch += ($xch < self::FIRSTCH - self::TABSZ)
                         ? 2 * self::TABSZ
-                        : ($xch < self::FIRSTCH) ? self::TABSZ : 0;
+                        : (($xch < self::FIRSTCH) ? self::TABSZ : 0);
                     $dti  = ($xch - self::FIRSTCH) + $dti;
                     $dti -= ($dti >= 2 * self::TABSZ)
                         ? 2 * self::TABSZ
-                        : ($dti >= self::TABSZ) ? self::TABSZ : 0;
+                        : (($dti >= self::TABSZ) ? self::TABSZ : 0);
                     $key  = $dti;
                     $tmp[$i] = chr($xch);
                 }
@@ -194,12 +194,12 @@ class Passwd_Driver_Pine extends Passwd_Driver
             $tmp = vsprintf("%.100s\t%.100s\t%.100s\t%d%s\n", $lines[$n]);
             for ($i = 0; $i < strlen($tmp); $i++) {
                 $eti = $key;
-                if ((ord($tmp[$i]) >= self::FIRSTCH) &&
-                    (ord($tmp[$i]) <= self::LASTCH)) {
+                if ((ord($tmp[$i]) >= self::FIRSTCH)
+                    && (ord($tmp[$i]) <= self::LASTCH)) {
                     $eti += ord($tmp[$i]) - self::FIRSTCH;
                     $eti -= ($eti >= 2 * self::TABSZ)
                         ? 2 * self::TABSZ
-                        : ($eti >= self::TABSZ) ? self::TABSZ : 0;
+                        : (($eti >= self::TABSZ) ? self::TABSZ : 0);
                     $key  = $eti;
                     $tmp[$i] = chr($eti + self::FIRSTCH);
                 }
@@ -232,9 +232,9 @@ class Passwd_Driver_Pine extends Passwd_Driver
 
         $this->_contents = $this->_decode($contents);
         foreach ($this->_contents as $line) {
-            if ($line[1] == $user &&
-                (($line[2] == $this->_params['imaphost']) ||
-                 (!empty($line[4]) && $line[4] == $this->_params['imaphost']))) {
+            if ($line[1] == $user
+                && (($line[2] == $this->_params['imaphost'])
+                 || (!empty($line[4]) && $line[4] == $this->_params['imaphost']))) {
                 $this->_comparePasswords($line[0], $oldPassword);
                 return;
             }
@@ -254,10 +254,10 @@ class Passwd_Driver_Pine extends Passwd_Driver
     protected function _modify($user, $newPassword)
     {
         for ($i = 0; $i < sizeof($this->_contents); $i++) {
-            if ($this->_contents[$i][1] == $user &&
-                (($this->_contents[$i][2] == $this->_params['imaphost']) ||
-                 (!empty($this->_contents[$i][4]) &&
-                  $this->_contents[$i][4] == $this->_params['imaphost']))) {
+            if ($this->_contents[$i][1] == $user
+                && (($this->_contents[$i][2] == $this->_params['imaphost'])
+                 || (!empty($this->_contents[$i][4])
+                  && $this->_contents[$i][4] == $this->_params['imaphost']))) {
                 $this->_contents[$i][0] = $newPassword;
             }
         }
