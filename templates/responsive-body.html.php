@@ -29,7 +29,7 @@
                                 '<strong>' . htmlspecialchars($backends[$backend]['name']) . '</strong>'
                             );
                         }
-                        ?>
+            ?>
                     </span>
                 </div>
             <?php endif; ?>

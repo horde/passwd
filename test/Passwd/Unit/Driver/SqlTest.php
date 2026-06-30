@@ -9,6 +9,7 @@
  * @internal
  * @package    Passwd
  * @subpackage UnitTests
+ * @coversNothing
  */
 class Passwd_Unit_Driver_SqlTest extends Passwd_TestCase
 {
@@ -24,10 +25,10 @@ class Passwd_Unit_Driver_SqlTest extends Passwd_TestCase
     {
         $GLOBALS['injector'] = $this->getInjector();
         $factory = new Passwd_Factory_Driver($this->getInjector());
-        $factory->backends = array();
+        $factory->backends = [];
 
         // Get a Horde_Db_Adapter to prevent usage of Horde_Core_Factory_Db.
-        $db = new Horde_Db_Adapter_Pdo_Sqlite(array('dbname' => ':memory:'));
+        $db = new Horde_Db_Adapter_Pdo_Sqlite(['dbname' => ':memory:']);
         $db->execute("CREATE TABLE horde_users (
             user_uid VARCHAR(255) PRIMARY KEY NOT NULL,
             user_pass VARCHAR(255) NOT NULL,
@@ -35,7 +36,7 @@ class Passwd_Unit_Driver_SqlTest extends Passwd_TestCase
             user_hard_expiration_date INTEGER
         );");
 
-        $this->driver = new Passwd_Driver_Sql(array('db' => $db));
+        $this->driver = new Passwd_Driver_Sql(['db' => $db]);
     }
 
     public function testSetup()

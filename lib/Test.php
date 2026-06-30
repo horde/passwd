@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2005-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2005-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (GPL). If you
  * did not receive this file, see http://www.horde.org/licenses/gpl.
@@ -20,6 +20,7 @@
  * @copyright 2005-2017 Horde LLC
  * @license   http://www.horde.org/licenses/gpl GPL
  * @package   Passwd
+ * @coversNothing
  */
 class Passwd_Test extends Horde_Test
 {
@@ -28,41 +29,41 @@ class Passwd_Test extends Horde_Test
      *
      * @var array
      */
-    protected $_moduleList = array(
+    protected $_moduleList = [
         'ctype' => 'Ctype Support',
-        'ldap' => array(
+        'ldap' => [
             'descrip' => 'LDAP Support',
-            'error' => 'If you will be using the any of the LDAP drivers for password changes, PHP must have ldap support. Compile PHP <code>--with-ldap</code> before continuing.'
-        ),
-        'mcrypt' => array(
+            'error' => 'If you will be using the any of the LDAP drivers for password changes, PHP must have ldap support. Compile PHP <code>--with-ldap</code> before continuing.',
+        ],
+        'mcrypt' => [
             'descrip' => 'Mcrypt Support',
-            'error' => 'If you will be using the smbldap driver for password changes, PHP must have mcrypt support. Compile PHP <code>--with-mcrypt</code> before continuing.'
-        ),
-        'soap' => array(
+            'error' => 'If you will be using the smbldap driver for password changes, PHP must have mcrypt support. Compile PHP <code>--with-mcrypt</code> before continuing.',
+        ],
+        'soap' => [
             'descrip' => 'SOAP Support',
-            'error' => 'If you will be using the SOAP driver for password changes, PHP must have soap support. Compile PHP with <code>--enable-soap</code> before continuing.'
-        )
-    );
+            'error' => 'If you will be using the SOAP driver for password changes, PHP must have soap support. Compile PHP with <code>--enable-soap</code> before continuing.',
+        ],
+    ];
 
     /**
      * PHP settings list.
      *
      * @var array
      */
-    protected $_settingsList = array();
+    protected $_settingsList = [];
 
     /**
      * PEAR modules list.
      *
      * @var array
      */
-    protected $_pearList = array(
-        'Crypt_CHAP' => array(
+    protected $_pearList = [
+        'Crypt_CHAP' => [
             'path' => 'Crypt/CHAP.php',
             'error' => 'If you will be using the smbldap driver for password changes, then you must install the PEAR Crypt_CHAP module.',
             'required' => false,
-        )
-    );
+        ],
+    ];
 
     /**
      */
@@ -70,9 +71,9 @@ class Passwd_Test extends Horde_Test
     {
         parent::__construct();
 
-        $this->_fileList += array(
-            'config/backends.php' => null
-        );
+        $this->_fileList += [
+            'config/backends.php' => null,
+        ];
     }
 
     /**
@@ -80,7 +81,5 @@ class Passwd_Test extends Horde_Test
      *
      * @return string  HTML output.
      */
-    public function appTests()
-    {
-    }
+    public function appTests() {}
 }

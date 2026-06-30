@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2000-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2000-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (GPL). If you
  * did not receive this file, see http://www.horde.org/licenses/gpl.
@@ -30,12 +30,12 @@ class Passwd_Driver_Http extends Passwd_Driver
     {
         // Add the required fields that most web-based forms would use.
         // Then add any fields that were passed in _params['fields'].
-        $post_data = array_merge(array(
+        $post_data = array_merge([
             $this->_params['username'] => $user,
             $this->_params['oldPasswd'] => $oldpass,
             $this->_params['passwd1'] => $newpass,
-            $this->_params['passwd2'] => $newpass
-        ), $this->_params['fields']);
+            $this->_params['passwd2'] => $newpass,
+        ], $this->_params['fields']);
 
         // Send the request
         try {

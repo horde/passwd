@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2004-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2004-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (GPL). If you
  * did not receive this file, see http://www.horde.org/licenses/gpl.
@@ -30,16 +30,16 @@ class Passwd_Driver_Smbldap extends Passwd_Driver_Ldap
 {
     /**
      */
-    public function __construct(array $params = array())
+    public function __construct(array $params = [])
     {
-        parent::__construct(array_merge(array(
+        parent::__construct(array_merge([
             'lm_attribute' => null,
             'nt_attribute' => null,
             'pw_set_attribute' => null,
             'pw_expire_attribute' => null,
             'pw_expire_time' => null,
-            'smb_objectclass' => 'sambaSamAccount'
-        ), $params));
+            'smb_objectclass' => 'sambaSamAccount',
+        ], $params));
     }
 
     /**
@@ -73,7 +73,7 @@ class Passwd_Driver_Smbldap extends Passwd_Driver_Ldap
 
         // All changes must succeed or fail together.  Attributes with
         // null name are not updated.
-        $changes = array();
+        $changes = [];
         if (!is_null($this->_params['lm_attribute'])) {
             $changes[$this->_params['lm_attribute']] = $lmpasswd;
         }

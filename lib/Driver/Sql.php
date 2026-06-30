@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2000-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2000-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (GPL). If you
  * did not receive this file, see http://www.horde.org/licenses/gpl.
@@ -47,7 +47,7 @@ class Passwd_Driver_Sql extends Passwd_Driver
      *   - table: (string) The name of the user database table.
      *   - user_col: (string) The table column for user name.
      */
-    public function __construct(array $params = array())
+    public function __construct(array $params = [])
     {
         if (isset($params['db'])) {
             $this->_db = $params['db'];
@@ -57,15 +57,15 @@ class Passwd_Driver_Sql extends Passwd_Driver
         }
 
         /* These default to matching the Auth_Sql defaults. */
-        parent::__construct(array_merge(array(
+        parent::__construct(array_merge([
             'encryption' => 'ssha',
             'pass_col' => 'user_pass',
             'query_lookup' => false,
             'query_modify' => false,
             'show_encryption' => false,
             'table' => 'horde_users',
-            'user_col' => 'user_uid'
-        ), $params));
+            'user_col' => 'user_uid',
+        ], $params));
     }
 
     /**
@@ -79,12 +79,12 @@ class Passwd_Driver_Sql extends Passwd_Driver
     protected function _lookup($user, $oldpass)
     {
         if (!empty($this->_params['query_lookup'])) {
-            list($sql, $values) = $this->_parseQuery($this->_params['query_lookup'], $user, $oldpass);
+            [$sql, $values] = $this->_parseQuery($this->_params['query_lookup'], $user, $oldpass);
         } else {
             /* Build the SQL query. */
-            $sql  = 'SELECT ' . $this->_params['pass_col'] . ' FROM ' . $this->_params['table'] .
-                    ' WHERE ' . $this->_params['user_col'] . ' = ?';
-            $values = array($user);
+            $sql  = 'SELECT ' . $this->_params['pass_col'] . ' FROM ' . $this->_params['table']
+                    . ' WHERE ' . $this->_params['user_col'] . ' = ?';
+            $values = [$user];
         }
 
         /* Run query. */
@@ -113,16 +113,16 @@ class Passwd_Driver_Sql extends Passwd_Driver
     protected function _modify($user, $newpass)
     {
         if (!empty($this->_params['query_modify'])) {
-            list($sql, $values) = $this->_parseQuery($this->_params['query_modify'], $user, $newpass);
+            [$sql, $values] = $this->_parseQuery($this->_params['query_modify'], $user, $newpass);
         } else {
             /* Encrypt the password. */
             $newpass = $this->_encryptPassword($newpass);
 
             /* Build the SQL query. */
-            $sql = 'UPDATE ' . $this->_params['table'] .
-                   ' SET ' . $this->_params['pass_col'] . ' = ?' .
-                   ' WHERE ' . $this->_params['user_col'] . ' = ?';
-            $values = array($newpass, $user);
+            $sql = 'UPDATE ' . $this->_params['table']
+                   . ' SET ' . $this->_params['pass_col'] . ' = ?'
+                   . ' WHERE ' . $this->_params['user_col'] . ' = ?';
+            $values = [$newpass, $user];
         }
 
         /* Execute the query. */
@@ -147,9 +147,9 @@ class Passwd_Driver_Sql extends Passwd_Driver
     protected function _parseQuery($string, $user, $password)
     {
         $query = '';
-        $values = array();
+        $values = [];
         $length = strlen($string);
-        @list($username, $domain) = explode('@', $user);
+        @[$username, $domain] = explode('@', $user);
         for ($i = 0; $i < $length; $i++) {
             if ($string[$i] == '%' && !empty($string[$i + 1])) {
                 switch ($string[++$i]) {
@@ -191,7 +191,7 @@ class Passwd_Driver_Sql extends Passwd_Driver
             }
         }
 
-        return array($query, $values);
+        return [$query, $values];
     }
 
     /**

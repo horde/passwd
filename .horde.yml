@@ -9,14 +9,12 @@ list: sork
 type: application
 homepage: https://www.horde.org/apps/passwd
 authors:
-  -
-    name: Jan Schneider
+  - name: Jan Schneider
     user: jan
     email: jan@horde.org
     active: true
     role: lead
-  -
-    name: Michael Slusarz
+  - name: Michael Slusarz
     user: slusarz
     email: slusarz@horde.org
     active: false
@@ -62,3 +60,4 @@ autoload:
   psr-4:
     Horde\Passwd\: /src
 vendor: horde
+keywords:

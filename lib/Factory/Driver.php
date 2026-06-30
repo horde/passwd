@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2011-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2011-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (GPL). If you
  * did not receive this file, see http://www.horde.org/licenses/gpl.php.
@@ -37,7 +37,7 @@ class Passwd_Factory_Driver extends Horde_Core_Factory_Base
      *
      * @var array
      */
-    private $_instances = array();
+    private $_instances = [];
 
     /**
      */
@@ -60,13 +60,13 @@ class Passwd_Factory_Driver extends Horde_Core_Factory_Base
      * @return Passwd_Driver  The singleton instance.
      * @throws Passwd_Exception
      */
-    public function create($name, $params = array())
+    public function create($name, $params = [])
     {
         $this->_loadBackends();
 
         $backends = empty($params['is_subdriver'])
             ? $this->_backends
-            : array($name => $params);
+            : [$name => $params];
 
         if (empty($backends[$name])) {
             throw new Passwd_Exception(sprintf(_("The password backend \"%s\" does not exist."), $name));
@@ -80,10 +80,10 @@ class Passwd_Factory_Driver extends Horde_Core_Factory_Base
             }
 
             if (empty($backend['params'])) {
-                $backend['params'] = array();
+                $backend['params'] = [];
             }
             if (empty($backend['policy'])) {
-                $backend['policy'] = array();
+                $backend['policy'] = [];
             }
             if (empty($params['is_subdriver']) && !empty($params)) {
                 $backend['params'] = array_merge($backend['params'], $params);
@@ -111,8 +111,8 @@ class Passwd_Factory_Driver extends Horde_Core_Factory_Base
 
                 case 'Passwd_Driver_Sql':
                 case 'Passwd_Driver_Vpopmail':
-                    if (empty($backend['params']['db']) ||
-                        !($backend['params']['db'] instanceof Horde_Db_Adapter)) {
+                    if (empty($backend['params']['db'])
+                        || !($backend['params']['db'] instanceof Horde_Db_Adapter)) {
                         try {
                             if (empty($backend['params'])) {
                                 $backend['params']['db'] = $this->_injector
@@ -187,12 +187,12 @@ class Passwd_Factory_Driver extends Horde_Core_Factory_Base
             throw new Passwd_Exception(_("No backends configured in backends.php"));
         }
 
-        $backends = array();
+        $backends = [];
         foreach ($allbackends as $name => $backend) {
             if (empty($backend['disabled'])) {
                 /* Make sure the 'params' entry exists. */
                 if (!isset($backend['params'])) {
-                    $backend['params'] = array();
+                    $backend['params'] = [];
                 }
 
                 $backends[$name] = $backend;

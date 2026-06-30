@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2000-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2000-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (GPL). If you
  * did not receive this file, see http://www.horde.org/licenses/gpl.
@@ -36,9 +36,9 @@ class Passwd_Driver_Expect extends Passwd_Driver
         $log = Horde::getTempFile('passwd');
 
         // Open expect script for writing.
-        $prog = 'LANG=C LC_ALL=C ' . $this->_params['program'] .
-            ' -f ' . escapeshellarg($this->_params['script']) .
-            ' -- ' . $this->_params['params'] . ' -log ' . escapeshellarg($log);
+        $prog = 'LANG=C LC_ALL=C ' . $this->_params['program']
+            . ' -f ' . escapeshellarg($this->_params['script'])
+            . ' -- ' . $this->_params['params'] . ' -log ' . escapeshellarg($log);
 
         $exp = @popen($prog, 'w');
         @fwrite($exp, $user . "\n");

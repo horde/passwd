@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2000-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2000-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (GPL). If you
  * did not receive this file, see http://www.horde.org/licenses/gpl.
@@ -32,12 +32,12 @@ class Passwd_Driver_Smbpasswd extends Passwd_Driver
 
     /**
      */
-    public function __construct(array $params = array())
+    public function __construct(array $params = [])
     {
-        parent::__construct(array_merge(array(
+        parent::__construct(array_merge([
             'host' => 'localhost',
-            'program' => '/usr/bin/smbpasswd'
-        ), $params));
+            'program' => '/usr/bin/smbpasswd',
+        ], $params));
     }
 
     /**

@@ -10,36 +10,37 @@
  * @license    http://www.horde.org/licenses/gpl GPL
  * @package    Passwd
  * @subpackage UnitTests
+ * @coversNothing
  */
 class Passwd_Unit_Factory_DriverTest extends Passwd_TestCase
 {
-    protected $_backends = array();
+    protected $_backends = [];
 
     public function setUp()
     {
         $this->markTestIncomplete('Factories with configuration files don\'t work out of the box.');
-        $this->_backends = array(
-            'null' => array(
+        $this->_backends = [
+            'null' => [
                 'disabled' => false,
                 'name' => 'Null',
                 'driver' => 'Null',
-                'policy' => array(
+                'policy' => [
                     'minLength' => 6,
-                    'minNumeric' => 1
-                )
-            )
-        );
+                    'minNumeric' => 1,
+                ],
+            ],
+        ];
     }
 
     public function testGettingSubdriversWorks()
     {
         $factory = new Passwd_Factory_Driver($this->getInjector());
-        $factory->backends = array();
+        $factory->backends = [];
 
-        $driver = $factory->create('Null', array(
+        $driver = $factory->create('Null', [
             'is_subdriver' => true,
-            'driver' => 'Null'
-        ));
+            'driver' => 'Null',
+        ]);
 
         $this->assertInstanceOf('Passwd_Driver', $driver);
     }

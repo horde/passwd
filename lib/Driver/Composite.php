@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright 2003-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2003-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file LICENSE for license information (GPL). If you
  * did not receive this file, see http://www.horde.org/licenses/gpl.
@@ -37,7 +37,7 @@ class Passwd_Driver_Composite extends Passwd_Driver
      *
      * @throws Passwd_Exception
      */
-    public function __construct(array $params = array())
+    public function __construct(array $params = [])
     {
         if (!isset($params['drivers']) || !is_array($params['drivers'])) {
             throw new Passwd_Exception(_("Required 'drivers' is misconfigured in Composite configuration."));
@@ -60,9 +60,9 @@ class Passwd_Driver_Composite extends Passwd_Driver
         foreach ($this->_params['drivers'] as $key => $val) {
             if (!isset($this->_drivers[$key])) {
                 try {
-                    $res = $driver->create($key, array_merge($val, array(
-                        'is_subdriver' => true
-                    )));
+                    $res = $driver->create($key, array_merge($val, [
+                        'is_subdriver' => true,
+                    ]));
                 } catch (Passwd_Exception $e) {
                     throw new Passwd_Exception(sprintf(_("%s: unable to load sub driver: %s"), $key, $e->getMessage()));
                 }
