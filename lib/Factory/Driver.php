@@ -1,4 +1,5 @@
 <?php
+use Horde\Passwd\PasswdConfig;
 
 /**
  * Copyright 2011-2026 Horde LLC (http://www.horde.org/)
@@ -62,6 +63,7 @@ class Passwd_Factory_Driver extends Horde_Core_Factory_Base
      */
     public function create($name, $params = [])
     {
+        $config = $injector->get('PasswdConfig');
         $this->_loadBackends();
 
         $backends = empty($params['is_subdriver'])
@@ -140,11 +142,11 @@ class Passwd_Factory_Driver extends Horde_Core_Factory_Base
                     break;
 
                 case 'Passwd_Driver_Soap':
-                    if (!empty($GLOBALS['conf']['http']['proxy']['proxy_host'])) {
-                        $backend['params']['soap_params']['proxy_host'] = $GLOBALS['conf']['http']['proxy']['proxy_host'];
-                        $backend['params']['soap_params']['proxy_port'] = $GLOBALS['conf']['http']['proxy']['proxy_port'];
-                        $backend['params']['soap_params']['proxy_login'] = $GLOBALS['conf']['http']['proxy']['proxy_user'];
-                        $backend['params']['soap_params']['proxy_password'] = $GLOBALS['conf']['http']['proxy']['proxy_pass'];
+                    if (!empty($config->get('http.proxy.proxy_host'))) {
+                        $backend['params']['soap_params']['proxy_host'] = $config->get('http.proxy.proxy_host');
+                        $backend['params']['soap_params']['proxy_port'] = $config->get('http.proxy.proxy_port');
+                        $backend['params']['soap_params']['proxy_login'] = $config->get('http.proxy.proxy_user');
+                        $backend['params']['soap_params']['proxy_password'] = $config->get('http.proxy.proxy_pass');
                     }
                     $backend['params']['soap_params']['encoding'] = 'UTF-8';
                     break;
