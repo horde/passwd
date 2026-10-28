@@ -12,11 +12,14 @@
  * @subpackage UnitTests
  * @coversNothing
  */
-class Passwd_Unit_Factory_DriverTest extends Passwd_TestCase
+
+namespace Horde\Passwd\Test\Unit;
+
+class Passwd_Unit_Factory_DriverTest extends TestBase
 {
     protected $_backends = [];
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->markTestIncomplete('Factories with configuration files don\'t work out of the box.');
         $this->_backends = [

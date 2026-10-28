@@ -24,6 +24,7 @@ use Horde\Passwd\PasswdConfig;
  *
  * @property-read array $backends  Backend list.
  */
+#[AllowDynamicProperties]
 class Passwd_Factory_Driver extends Horde_Core_Factory_Base
 {
     /**
