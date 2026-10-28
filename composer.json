@@ -30,7 +30,9 @@
         "horde/view": "^3 || dev-FRAMEWORK_6_0",
         "ext-gettext": "*"
     },
-    "require-dev": {},
+    "require-dev": {
+        "horde/test": "^3.0@dev"
+    },
     "suggest": {
         "horde/db": "^3 || dev-FRAMEWORK_6_0",
         "horde/http": "^3 || dev-FRAMEWORK_6_0",
@@ -63,5 +65,6 @@
         "branch-alias": {
             "dev-FRAMEWORK_6_0": "6.x-dev"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }

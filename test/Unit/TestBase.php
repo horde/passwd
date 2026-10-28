@@ -10,7 +10,15 @@
  * @subpackage UnitTests
  * @coversNothing
  */
-class Passwd_TestCase extends PHPUnit_Framework_TestCase
+
+namespace Horde\Passwd\Test\Unit;
+
+use PHPUnit\Framework\TestCase;
+use Horde_Test_Setup;
+use Horde_Injector;
+use Horde_Injector_TopLevel;
+
+class TestBase extends TestCase
 {
     protected function getInjector()
     {

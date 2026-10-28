@@ -11,17 +11,26 @@
  * @subpackage UnitTests
  * @coversNothing
  */
-class Passwd_Unit_Driver_SqlTest extends Passwd_TestCase
+
+namespace Horde\Passwd\Test\Unit;
+
+use Horde_Test_Setup;
+use Horde_Injector;
+use Passwd_Factory_Driver;
+use Horde_Db_Adapter_Pdo_Sqlite;
+use Passwd_Driver_Sql;
+
+class Passwd_Unit_Driver_SqlTest extends TestBase
 {
     private $driver;
 
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         self::createBasicPasswdSetup(new Horde_Test_Setup());
         parent::setUpBeforeClass();
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         $GLOBALS['injector'] = $this->getInjector();
         $factory = new Passwd_Factory_Driver($this->getInjector());
@@ -49,6 +58,7 @@ class Passwd_Unit_Driver_SqlTest extends Passwd_TestCase
      */
     public function testChangePasswordFailsForNonexistingUser()
     {
+        $this->expectExceptionMessage('User not found');
         $res = $this->driver->changePassword('Patricia', 'alt', 'neu');
     }
 
