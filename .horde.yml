@@ -20,10 +20,10 @@ authors:
     active: false
     role: lead
 version:
-  release: 6.0.0-RC3
+  release: 6.1.0-alpha
   api: 6.0.0alpha1
 state:
-  release: RC
+  release: alpha
   api: alpha
 license:
   identifier: GPL-2.0-only
